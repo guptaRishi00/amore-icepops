@@ -13,10 +13,7 @@ export default function FeaturesBanner() {
   const repeatedFeatures = [...features, ...features, ...features, ...features];
 
   return (
-    <section className="w-full bg-white border-b-[3px] border-stone-900 py-6 overflow-hidden flex items-center">
-      {/* Inline styles for the marquee animation. 
-        This keeps it a simple, drop-in component with no extra config required. 
-      */}
+    <section className="w-full bg-white py-6 overflow-hidden flex items-center">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }

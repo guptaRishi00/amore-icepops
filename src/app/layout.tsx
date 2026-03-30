@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Borel, Caprasimo, Jua } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const borel = Borel({
   weight: "400",
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+    
       </body>
     </html>
   );

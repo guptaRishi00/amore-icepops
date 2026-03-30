@@ -31,10 +31,7 @@ export default function Header() {
 
       <header className="w-full py-5 px-6 lg:px-20 flex items-center justify-between mt-1">
         <div className="flex items-center gap-12 lg:gap-24">
-          <Link
-            href="/"
-            className="transition-opacity hover:opacity-80 shrink-0"
-          >
+          <Link href="/" className="shrink-0">
             <Image
               src="/logo.png"
               alt="Logo"

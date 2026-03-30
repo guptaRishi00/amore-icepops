@@ -2,19 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
-import { ChevronRight, ChevronLeft, Heart } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
+// 1. ADDED: An 'image' property to each flavor object.
+// When you get your real images, just change "/grape2.png" to "/mango.png", etc.
 const flavors = [
-  { name: "Mango", id: "mango" },
-  { name: "Strawberry", id: "strawberry" },
-  { name: "Peach", id: "peach" },
-  { name: "Raspberry", id: "raspberry" },
-  { name: "Grapes", id: "grapes" },
+  { name: "Mango", id: "mango", image: "/mango2.png" },
+  { name: "Strawberry", id: "strawberry", image: "/strawberry2.png" },
+  { name: "Peach", id: "peach", image: "/peach2.png" },
+  { name: "Raspberry", id: "raspberry", image: "/rasp.png" },
+  { name: "Grapes", id: "grapes", image: "/grape3.png" },
 ];
 
 export default function PopularFlavors() {
-  const carouselRef = useRef<any>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Duplicate the array to create that "infinite" long track feel
+  const displayFlavors = [...flavors, ...flavors, ...flavors];
 
   const scroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
@@ -23,10 +29,31 @@ export default function PopularFlavors() {
     }
   };
 
+  // --- AUTO SCROLL LOGIC ---
+  useEffect(() => {
+    if (isHovered) return; // Pause scrolling when user hovers/touches
+
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+
+        // If we hit the end of the scrollable area, rewind to the start
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          // Otherwise, just scroll one card to the right
+          scroll("right");
+        }
+      }
+    }, 3000); // Scrolls every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
   return (
     <section className="w-full bg-white lg:pt-30 px-6 ">
       <div className="max-w-full mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:px-12 lg:px-20  justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end md:px-12 lg:px-20 justify-between mb-12 gap-6">
           <div className="flex items-center gap-3 md:gap-4">
             <Image
               src="/penguine2.svg"
@@ -71,29 +98,27 @@ export default function PopularFlavors() {
         </div>
 
         {/* === CAROUSEL CONTAINER === */}
-        {/* The ugly utility classes at the end hide the default scrollbar across all browsers! */}
         <div
           ref={carouselRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
           className="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 pt-4 px-2 -mx-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
         >
-          {flavors.map((flavor) => (
+          {displayFlavors.map((flavor, index) => (
             <div
-              key={flavor.id}
+              key={`${flavor.id}-${index}`}
               className="flex flex-col items-center gap-5 shrink-0 snap-center min-w-[85vw] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[400px]"
             >
-              <div className="w-full aspect-[4/5] bg-white border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center p-6 relative overflow-hidden transition-transform hover:-translate-y-3 duration-300 shadow-sm hover:shadow-xl">
-                <div className="w-full h-full relative bg-stone-50 rounded-3xl flex items-center justify-center border-2 border-dashed border-stone-200">
-                  <span className="font-jua text-stone-400">
-                    Add {flavor.name} Image
-                  </span>
-
-                  {/* <Image 
-                    src={`/${flavor.id}.png`} 
-                    alt={`${flavor.name} ice cream`} 
-                    fill 
-                    className="object-contain p-6 hover:scale-105 transition-transform duration-500" 
-                  /> */}
-                </div>
+              <div className="w-full aspect-[4/5] bg-white border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden transition-transform hover:-translate-y-3 duration-300 shadow-sm hover:shadow-xl group">
+                {/* 2. ADDED: Uses 'flavor.image' instead of hardcoding the image path */}
+                <Image
+                  src={flavor.image}
+                  alt={`${flavor.name} ice cream`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
               <h3 className="font-caprasimo text-stone-900 text-xl md:text-2xl uppercase tracking-wider text-center">

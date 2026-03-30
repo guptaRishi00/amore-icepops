@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function WeOfferMemoriesSection() {
   return (
@@ -8,21 +8,21 @@ export default function WeOfferMemoriesSection() {
       <div className="w-full flex flex-col md:flex-row items-center justify-center gap-16 lg:gap-20">
         {/* --- Left Column: Image Area --- */}
         <div className="w-full md:w-1/2 flex justify-center order-2 md:order-1">
-          <Image
-            src="/penguine5.png"
-            alt="Memories Image"
-            width={1000}
-            height={1000}
-            className="object-cover object-center lg:w-160"
-          />
+          {/* Added overflow-hidden to clip the image to the rounded corners */}
+          <div className="w-full max-w-md aspect-square lg:aspect-[4/5] bg-stone-100 border-[3px] border-stone-900 rounded-[2rem] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center relative transition-transform duration-300 hover:-translate-y-2 overflow-hidden">
+            <Image
+              src="/apple.png"
+              alt="Memories Image"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* --- Right Column: Text Area --- */}
         <div className="w-full md:w-1/2 flex flex-col items-start space-y-8 order-1 md:order-2">
-          {/* UPDATED TITLE: Uses inline-block for natural text wrapping */}
           <h2 className="font-caprasimo text-5xl md:text-6xl lg:text-[60px] text-stone-900 uppercase leading-[1.1] tracking-wider max-w-2xl">
             We offer
-            {/* The inline-block and align-middle keeps the image flowing with the text */}
             <span className="inline-block align-middle mx-3 lg:mx-4 -mt-2 lg:-mt-4">
               <Image
                 src="/ice-pop2.png"
