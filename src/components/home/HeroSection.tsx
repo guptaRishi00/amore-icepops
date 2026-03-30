@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section className="px-5 ">
       <div className="relative w-full min-h-screen flex items-center overflow-hidden pt-20 rounded-xl">
         <Image
-          src="/hero2.png"
+          src="/hero3.png"
           alt="Delicious colorful ice pops"
           fill
           priority

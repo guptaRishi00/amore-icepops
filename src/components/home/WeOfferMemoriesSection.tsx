@@ -9,7 +9,7 @@ export default function WeOfferMemoriesSection() {
         {/* --- Left Column: Image Area --- */}
         <div className="w-full md:w-1/2 flex justify-center order-2 md:order-1">
           <Image
-            src="/penguine4.png"
+            src="/penguine5.png"
             alt="Memories Image"
             width={1000}
             height={1000}
@@ -25,7 +25,7 @@ export default function WeOfferMemoriesSection() {
             {/* The inline-block and align-middle keeps the image flowing with the text */}
             <span className="inline-block align-middle mx-3 lg:mx-4 -mt-2 lg:-mt-4">
               <Image
-                src="/ice-pop.png"
+                src="/ice-pop2.png"
                 alt="Ice Pop"
                 width={80}
                 height={80}
