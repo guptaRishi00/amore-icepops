@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// --- CUSTOM SVG ICONS (Scaled down to 18x18) ---
+// --- CUSTOM SVG ICONS (Scaled up to 24x24) ---
 const InstagramIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -23,8 +23,8 @@ const InstagramIcon = () => (
 const FacebookIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -39,8 +39,8 @@ const FacebookIcon = () => (
 const TwitterIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -54,48 +54,48 @@ const TwitterIcon = () => (
 
 export default function Footer() {
   return (
-    // Scaled down padding and border width
-    <footer className="w-full bg-[#FAF9F6] border-t-[2px] border-stone-900 py-10 px-4 md:px-8 lg:px-12">
+    // Scaled up padding and border width
+    <footer className="w-full bg-[#FAF9F6] border-t-[3px] border-stone-900 py-16 md:py-20 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* --- MAIN FOOTER GRID --- */}
-        {/* Tightened grid gaps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        {/* Widened grid gaps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
           {/* Left Side: Brand & Socials */}
           <div className="lg:col-span-2 flex flex-col items-start pr-0 lg:pr-12">
-            <Link href="/" className="flex items-center gap-3 mb-4 group">
-              {/* Scaled down logo */}
+            <Link href="/" className="flex items-center gap-4 mb-6 group">
+              {/* Scaled up logo */}
               <Image
                 src="/logo.png"
                 alt="Amore Logo"
-                width={72}
-                height={72}
+                width={300}
+                height={300}
                 className="object-contain w-full h-full"
               />
             </Link>
 
-            {/* Scaled down text size and margin */}
-            <p className="font-jua text-stone-700 text-base leading-relaxed mb-6 max-w-sm">
+            {/* Scaled up text size and margin */}
+            <p className="font-jua text-stone-700 text-xl leading-relaxed mb-10 max-w-sm">
               Bringing joy to life in a cup since 2016. Handmade ice cream rolls
               and gelato crafted with love.
             </p>
 
-            {/* Scaled down social icons (size, borders, shadows) */}
-            <div className="flex items-center gap-3">
+            {/* Scaled up social icons (size, borders, shadows) */}
+            <div className="flex items-center gap-4">
               <Link
                 href="#"
-                className="w-10 h-10 bg-white border-[2px] border-stone-900 rounded-full flex items-center justify-center text-stone-900 shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+                className="w-14 h-14 bg-white border-[3px] border-stone-900 rounded-full flex items-center justify-center text-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
               >
                 <InstagramIcon />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 bg-white border-[2px] border-stone-900 rounded-full flex items-center justify-center text-stone-900 shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+                className="w-14 h-14 bg-white border-[3px] border-stone-900 rounded-full flex items-center justify-center text-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
               >
                 <FacebookIcon />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 bg-white border-[2px] border-stone-900 rounded-full flex items-center justify-center text-stone-900 shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+                className="w-14 h-14 bg-white border-[3px] border-stone-900 rounded-full flex items-center justify-center text-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
               >
                 <TwitterIcon />
               </Link>
@@ -104,12 +104,12 @@ export default function Footer() {
 
           {/* Column 3: Explore Links */}
           <div className="flex flex-col items-start">
-            {/* Scaled down heading */}
-            <h3 className="font-caprasimo text-xl text-stone-900 uppercase tracking-wider mb-4">
+            {/* Scaled up heading */}
+            <h3 className="font-caprasimo text-2xl lg:text-3xl text-stone-900 uppercase tracking-wider mb-8">
               Explore
             </h3>
-            {/* Scaled down list gap and text size */}
-            <ul className="flex flex-col gap-3 font-jua text-base text-stone-700">
+            {/* Scaled up list gap and text size */}
+            <ul className="flex flex-col gap-5 font-jua text-xl text-stone-700">
               <li>
                 <Link
                   href="#"
@@ -147,12 +147,12 @@ export default function Footer() {
 
           {/* Column 4: Say Hello Links */}
           <div className="flex flex-col items-start">
-            {/* Scaled down heading */}
-            <h3 className="font-caprasimo text-xl text-stone-900 uppercase tracking-wider mb-4">
+            {/* Scaled up heading */}
+            <h3 className="font-caprasimo text-2xl lg:text-3xl text-stone-900 uppercase tracking-wider mb-8">
               Say Hello
             </h3>
-            {/* Scaled down list gap and text size */}
-            <ul className="flex flex-col gap-3 font-jua text-base text-stone-700">
+            {/* Scaled up list gap and text size */}
+            <ul className="flex flex-col gap-5 font-jua text-xl text-stone-700">
               <li>
                 <Link
                   href="#"
@@ -182,16 +182,16 @@ export default function Footer() {
         </div>
 
         {/* --- BOTTOM DIVIDER & COPYRIGHT --- */}
-        {/* Scaled down top margin, border width, and text size */}
-        <div className="w-full mt-10 pt-6 border-t-[2px] border-stone-900 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <p className="font-jua text-stone-600 text-sm">
+        {/* Scaled up top margin, border width, and text size */}
+        <div className="w-full mt-16 pt-8 border-t-[3px] border-stone-900 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <p className="font-jua text-stone-600 text-lg">
             © {new Date().getFullYear()} Amore icepops All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 font-jua text-stone-600 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-6 font-jua text-stone-600 text-lg">
             <Link href="#" className="hover:text-stone-900 transition-colors">
               Privacy Policy
             </Link>
-            <span className="w-1.5 h-1.5 bg-stone-900 rounded-full hidden sm:block"></span>
+            <span className="w-2 h-2 bg-stone-900 rounded-full hidden sm:block"></span>
             <Link href="#" className="hover:text-stone-900 transition-colors">
               Terms of Service
             </Link>
