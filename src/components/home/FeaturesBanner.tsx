@@ -5,7 +5,7 @@ import { Grape } from "lucide-react";
 // Using fill="currentColor" to inherit the text-[#406BB5] color from the parent div.
 // The cutout details use fill="#f3f4f6" to match the bg-gray-100 of the circle, creating negative space.
 
-const CustomPalette = ({ size }) => (
+const CustomPalette = ({ size }:any) => (
   <svg
     width={size}
     height={size}
@@ -17,7 +17,7 @@ const CustomPalette = ({ size }) => (
   </svg>
 );
 
-const LeafTubIcon = ({ size }) => (
+const LeafTubIcon = ({ size }:any) => (
   <svg
     width={size}
     height={size}
@@ -39,7 +39,7 @@ const LeafTubIcon = ({ size }) => (
   </svg>
 );
 
-const IceCreamBowlIcon = ({ size }) => (
+const IceCreamBowlIcon = ({ size }:any) => (
   <svg
     width={size}
     height={size}
@@ -58,7 +58,7 @@ const IceCreamBowlIcon = ({ size }) => (
   </svg>
 );
 
-const StrawberryIcon = ({ size }) => (
+const StrawberryIcon = ({ size }:any) => (
   <svg
     width={size}
     height={size}
