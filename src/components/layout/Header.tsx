@@ -29,8 +29,10 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="w-full py-5 px-6 lg:px-20 flex items-center justify-between mt-1">
-        <div className="flex items-center gap-12 lg:gap-24">
+      {/* Changed to a grid layout to perfectly center the middle element */}
+      <header className="w-full py-5 px-6 lg:px-20 grid grid-cols-2 md:grid-cols-3 items-center mt-1">
+        {/* 1. LEFT: Logo */}
+        <div className="flex justify-start">
           <Link href="/" className="shrink-0">
             <Image
               src="/logo.png"
@@ -41,46 +43,45 @@ export default function Header() {
               className="object-contain w-32 md:w-40"
             />
           </Link>
-
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9 font-caprasimo text-stone-900 text-[15px] tracking-wide pt-1">
-            <Link
-              href="/shop"
-              className="hover:text-[#406BB5] transition-colors"
-            >
-              Shop
-            </Link>
-
-            <Link
-              href="/flavors"
-              className="flex items-center gap-1 hover:text-[#406BB5] transition-colors group"
-            >
-              Flavors
-            </Link>
-
-            <Link
-              href="/story"
-              className="hover:text-[#406BB5] transition-colors"
-            >
-              Story
-            </Link>
-
-            <Link
-              href="/about"
-              className="hover:text-[#406BB5] transition-colors"
-            >
-              About Us
-            </Link>
-
-            <Link
-              href="/contact"
-              className="hover:text-[#406BB5] transition-colors"
-            >
-              Contact
-            </Link>
-          </nav>
         </div>
 
-        <div className="flex items-center gap-5 lg:gap-7 shrink-0 pt-1">
+        {/* 2. CENTER: Navigation Links */}
+        <nav className="hidden md:flex justify-center items-center gap-7 lg:gap-9 font-caprasimo text-stone-900 text-[15px] tracking-wide pt-1">
+          <Link href="/shop" className="hover:text-[#406BB5] transition-colors">
+            Shop
+          </Link>
+
+          <Link
+            href="/flavors"
+            className="flex items-center gap-1 hover:text-[#406BB5] transition-colors group"
+          >
+            Flavors
+          </Link>
+
+          <Link
+            href="/story"
+            className="hover:text-[#406BB5] transition-colors"
+          >
+            Story
+          </Link>
+
+          <Link
+            href="/about"
+            className="hover:text-[#406BB5] transition-colors"
+          >
+            About Us
+          </Link>
+
+          <Link
+            href="/contact"
+            className="hover:text-[#406BB5] transition-colors"
+          >
+            Contact
+          </Link>
+        </nav>
+
+        {/* 3. RIGHT: Cart and Order Button */}
+        <div className="flex items-center justify-end gap-5 lg:gap-7 shrink-0 pt-1">
           <button
             aria-label="Cart"
             className="relative text-stone-900 hover:text-[#406BB5] cursor-pointer transition-colors"

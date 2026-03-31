@@ -13,7 +13,7 @@ export default function FeaturesBanner() {
   const repeatedFeatures = [...features, ...features, ...features, ...features];
 
   return (
-    <section className="w-full bg-white py-6 overflow-hidden flex items-center">
+    <section className="w-full bg-white py-6 overflow-hidden flex items-center lg:mt-20">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }

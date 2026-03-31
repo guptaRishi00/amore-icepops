@@ -5,91 +5,90 @@ import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
-// 1. ADDED: An 'image' property to each flavor object.
-// When you get your real images, just change "/grape2.png" to "/mango.png", etc.
 const flavors = [
-  { name: "Mango", id: "mango", image: "/mango2.png" },
-  { name: "Strawberry", id: "strawberry", image: "/strawberry2.png" },
-  { name: "Peach", id: "peach", image: "/peach2.png" },
-  { name: "Raspberry", id: "raspberry", image: "/rasp.png" },
-  { name: "Grapes", id: "grapes", image: "/grape3.png" },
+  { name: "Mango", id: "mango", image: "/mango3.png" },
+  { name: "Strawberry", id: "strawberry", image: "/strawberry3.png" },
+  { name: "Peach", id: "peach", image: "/peach3.png" },
+  { name: "Raspberry", id: "raspberry", image: "/rasp2.png" },
+  { name: "Grapes", id: "grapes", image: "/grape4.png" },
 ];
 
 export default function PopularFlavors() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Duplicate the array to create that "infinite" long track feel
   const displayFlavors = [...flavors, ...flavors, ...flavors];
 
   const scroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
-      const scrollAmount = direction === "left" ? -400 : 400;
+      // Reduced scroll amount to match new scaled-down card widths
+      const scrollAmount = direction === "left" ? -300 : 300;
       carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
-  // --- AUTO SCROLL LOGIC ---
   useEffect(() => {
-    if (isHovered) return; // Pause scrolling when user hovers/touches
+    if (isHovered) return;
 
     const interval = setInterval(() => {
       if (carouselRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
 
-        // If we hit the end of the scrollable area, rewind to the start
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
           carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
         } else {
-          // Otherwise, just scroll one card to the right
           scroll("right");
         }
       }
-    }, 3000); // Scrolls every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isHovered]);
 
   return (
-    <section className="w-full bg-white lg:pt-30 px-6 ">
+    // Scaled down top padding and horizontal padding
+    <section className="w-full bg-white pt-12 lg:pt-16 px-4 md:px-8 lg:mt-20">
       <div className="max-w-full mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:px-12 lg:px-20 justify-between mb-12 gap-6">
-          <div className="flex items-center gap-3 md:gap-4">
+        {/* Reduced bottom margin and gaps */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 lg:px-12">
+          <div className="flex items-center gap-3">
+            {/* Scaled down icon from 40 to 32 */}
             <Image
               src="/penguine2.svg"
               alt="Flavors Icon"
-              width={40}
-              height={40}
+              width={32}
+              height={32}
               className="object-contain"
             />
-            <h2 className="font-caprasimo text-4xl md:text-5xl lg:text-[54px] text-stone-900 uppercase tracking-wide leading-none">
+            {/* Scaled down heading sizes */}
+            <h2 className="font-caprasimo text-3xl md:text-4xl lg:text-[40px] text-stone-900 uppercase tracking-wide leading-none">
               Popular <br className="hidden md:block lg:hidden" /> Flavors{" "}
               <span className="hidden lg:inline">-</span>
             </h2>
           </div>
 
           <div className="flex items-center gap-4 shrink-0">
-            {/* Carousel Navigation Arrows */}
-            <div className="hidden md:flex items-center gap-2 mr-4">
+            <div className="hidden md:flex items-center gap-2 mr-2">
+              {/* Scaled down buttons: w-10 h-10, border-[2px], smaller shadow */}
               <button
                 onClick={() => scroll("left")}
                 aria-label="Scroll left"
-                className="w-12 h-12 flex items-center justify-center bg-white border-[3px] border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all"
+                className="w-10 h-10 flex items-center justify-center bg-white border-[2px] border-stone-900 rounded-full shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all"
               >
                 <ChevronLeft
-                  size={24}
-                  strokeWidth={3}
+                  size={20}
+                  strokeWidth={2.5}
                   className="text-stone-900"
                 />
               </button>
               <button
                 onClick={() => scroll("right")}
                 aria-label="Scroll right"
-                className="w-12 h-12 flex items-center justify-center bg-white border-[3px] border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all"
+                className="w-10 h-10 flex items-center justify-center bg-white border-[2px] border-stone-900 rounded-full shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all"
               >
                 <ChevronRight
-                  size={24}
-                  strokeWidth={3}
+                  size={20}
+                  strokeWidth={2.5}
                   className="text-stone-900"
                 />
               </button>
@@ -97,31 +96,34 @@ export default function PopularFlavors() {
           </div>
         </div>
 
-        {/* === CAROUSEL CONTAINER === */}
         <div
           ref={carouselRef}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={() => setIsHovered(true)}
           onTouchEnd={() => setIsHovered(false)}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 pt-4 px-2 -mx-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          // Reduced gap and bottom padding
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 pt-2 px-2 -mx-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] lg:px-12"
         >
           {displayFlavors.map((flavor, index) => (
             <div
               key={`${flavor.id}-${index}`}
-              className="flex flex-col items-center gap-5 shrink-0 snap-center min-w-[85vw] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[400px]"
+              // Scaled down min-widths for the cards
+              className="flex flex-col items-center gap-3 shrink-0 snap-center min-w-[75vw] sm:min-w-[260px] md:min-w-[280px] lg:min-w-[300px]"
             >
-              <div className="w-full aspect-[4/5] bg-white border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden transition-transform hover:-translate-y-3 duration-300 shadow-sm hover:shadow-xl group">
-                {/* 2. ADDED: Uses 'flavor.image' instead of hardcoding the image path */}
+              {/* Reduced border width and border radius */}
+              <div className="w-full aspect-4/5 bg-white border-[2px] border-stone-900 rounded-[2rem] flex items-center justify-center relative overflow-hidden transition-transform hover:-translate-y-2 duration-300 shadow-sm hover:shadow-lg group">
                 <Image
                   src={flavor.image}
                   alt={`${flavor.name} ice cream`}
                   fill
+                  sizes="(max-width: 768px) 75vw, 300px"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
-              <h3 className="font-caprasimo text-stone-900 text-xl md:text-2xl uppercase tracking-wider text-center">
+              {/* Scaled down text sizing */}
+              <h3 className="font-caprasimo text-stone-900 text-lg md:text-xl uppercase tracking-wider text-center">
                 {flavor.name}
               </h3>
             </div>
