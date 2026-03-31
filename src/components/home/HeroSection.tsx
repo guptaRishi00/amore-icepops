@@ -15,7 +15,7 @@ export default function HeroSection() {
         />
 
         {/* --- Black Gradient Overlay --- */}
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/30 via-stone-900/30 to-transparent -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/40 via-stone-900/0 to-transparent -z-10" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full">
           {/* Increased main gap from 10 to 12 */}
