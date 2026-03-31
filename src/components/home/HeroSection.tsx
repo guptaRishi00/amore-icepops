@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section className="px-5">
       {/* Reduced height from min-h-screen to min-h-[60vh] and adjusted padding */}
-      <div className="relative w-full min-h-[77vh] flex items-center overflow-hidden py-16 md:py-24 rounded-xl">
+      <div className="relative w-full min-h-[86vh] flex items-center overflow-hidden py-16 md:py-24 rounded-xl">
         <Image
           src="/hero4.png"
           alt="Delicious colorful ice pops"
