@@ -23,12 +23,12 @@ export default function HeroSection() {
             {/* Increased inner gap from 4 to 6 */}
             <div className="flex items-start flex-col gap-6">
               {/* Scaled up font sizes, strokes, and drop-shadows */}
-              <h1 className="font-caprasimo text-6xl sm:text-7xl md:text-[88px] lg:text-[100px] text-white uppercase leading-[0.9] tracking-tight [-webkit-text-stroke:2px_#1c1917] md:[-webkit-text-stroke:4px_#1c1917] drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] md:drop-shadow-[8px_8px_0px_rgba(28,25,23,1)] mb-2 md:mb-4">
-                Taste The <br />
-                Summer.
+              <h1 className="font-caprasimo flex flex-col text-5xl sm:text-7xl md:text-[88px] lg:text-[100px] text-white uppercase tracking-tight [-webkit-text-stroke:2px_#1c1917] md:[-webkit-text-stroke:4px_#1c1917] mb-2 md:mb-4">
+                <span className="block leading-[0.9] drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] md:drop-shadow-[8px_8px_0px_rgba(28,25,23,1)]">Taste The</span>
+                <span className="block leading-[0.9] drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] md:drop-shadow-[8px_8px_0px_rgba(28,25,23,1)]">Summer.</span>
               </h1>
               {/* Scaled up text size to text-xl/2xl and increased max-width */}
-              <p className="font-caprasimo text-stone-100 text-xl md:text-2xl max-w-xl leading-snug text-center sm:text-left drop-shadow-md">
+              <p className="font-caprasimo text-stone-100 text-lg md:text-2xl max-w-xl leading-snug text-center sm:text-left drop-shadow-md">
                 Dive into a frozen paradise and let our handcrafted ice-pops
                 take you to a land of pure joy.
               </p>

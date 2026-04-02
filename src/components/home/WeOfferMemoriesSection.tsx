@@ -19,7 +19,7 @@ export default function WeOfferMemoriesSection() {
         </div>
 
         <div className="w-full md:w-1/2 flex flex-col items-start space-y-6 order-1 md:order-2">
-          <h2 className="font-caprasimo text-4xl md:text-5xl lg:text-[45px] text-stone-900 uppercase leading-[1.1] tracking-wider max-w-xl">
+          <h2 className="font-caprasimo text-3xl md:text-5xl lg:text-[45px] text-stone-900 uppercase leading-[1.1] tracking-wider max-w-xl">
             We offer
             <span className="inline-block align-middle mx-2 lg:mx-3 -mt-1 lg:-mt-2">
               <Image
@@ -34,8 +34,8 @@ export default function WeOfferMemoriesSection() {
           </h2>
 
           {/* Scaled down paragraph text */}
-          <p className="font-jua text-lg lg:text-xl text-stone-800 leading-relaxed max-w-lg">
-            You will have a great time with to our delicious desserts. Delight
+          <p className="font-jua text-base lg:text-xl text-stone-800 leading-relaxed max-w-lg">
+            You will have a great time with our delicious desserts. Delight
             in exquisite ice-cream, from elegant desserts, which reflect
             quality.
           </p>

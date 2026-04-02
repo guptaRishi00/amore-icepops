@@ -61,7 +61,7 @@ export default function PopularFlavors() {
               className="object-contain"
             />
             {/* Scaled down heading sizes */}
-            <h2 className="font-caprasimo text-3xl md:text-4xl lg:text-[40px] text-stone-900 uppercase tracking-wide leading-none">
+            <h2 className="font-caprasimo text-2xl md:text-4xl lg:text-[40px] text-stone-900 uppercase tracking-wide leading-none">
               Popular <br className="hidden md:block lg:hidden" /> Flavors{" "}
               <span className="hidden lg:inline">-</span>
             </h2>

@@ -1,16 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import {
   ShoppingBag,
   Search,
   ChevronDown,
   ChevronRight,
   Truck,
+  Menu,
+  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <div className="w-full top-0 z-50 flex flex-col bg-white">
+    <div className="relative w-full z-50 flex flex-col bg-white">
       <div className="px-3 pt-3 md:px-5">
         <div className="w-full bg-[#406BB5] text-stone-100 py-2.5 px-6 md:px-10 flex items-center justify-between text-[10px] sm:text-[11px] font-extrabold tracking-[0.15em] uppercase rounded-md">
           <div className="hidden md:flex items-center gap-2">
@@ -96,8 +103,47 @@ export default function Header() {
           >
             Order Now <ChevronRight size={16} strokeWidth={3} />
           </Link>
+
+          {/* Hamburger Menu Toggle */}
+          <button
+            className="md:hidden text-stone-900 hover:text-[#406BB5] transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
+          </button>
         </div>
       </header>
+
+      {/* MOBILE MENU */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden w-full bg-white border-t border-stone-200 absolute top-full left-0 z-40 flex flex-col px-6 py-4 shadow-xl">
+          <nav className="flex flex-col gap-4 font-caprasimo text-stone-900 text-lg tracking-wide">
+            <Link href="/shop" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
+              Shop
+            </Link>
+            <Link href="/flavors" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
+              Flavors
+            </Link>
+            <Link href="/story" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
+              Story
+            </Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
+              About Us
+            </Link>
+            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2">
+              Contact
+            </Link>
+            <Link
+              href="/order"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 flex items-center justify-center gap-1 px-5 py-3 bg-[#406BB5] text-white font-jua text-sm uppercase tracking-widest rounded-full shadow-md"
+            >
+              Order Now <ChevronRight size={16} strokeWidth={3} />
+            </Link>
+          </nav>
+        </div>
+      )}
     </div>
   );
 }

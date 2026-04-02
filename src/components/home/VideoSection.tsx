@@ -4,8 +4,8 @@ import { ChevronRight } from "lucide-react";
 
 export default function VideoSection() {
   return (
-    // Scaled down the height of the section
-    <section className="relative w-full h-[55vh] md:h-[65vh] overflow-hidden">
+    // Scaled down the height of the section, gave flex min-height and padding for mobile
+    <section className="relative w-full min-h-[75vh] py-16 md:py-0 md:min-h-0 md:h-[65vh] overflow-hidden flex flex-col items-center justify-center">
       {/* --- BACKGROUND VIDEO --- */}
       <div className="absolute inset-0 z-0">
         <video
@@ -37,9 +37,9 @@ export default function VideoSection() {
         </div>
 
         {/* Scaled down heading size and drop-shadow */}
-        <h2 className="font-caprasimo text-4xl md:text-6xl lg:text-[72px] text-white uppercase leading-none tracking-tight drop-shadow-[4px_4px_0px_#406BB5] max-w-3xl">
-          Crafting Joy <br />
-          <span className="text-white">In Every Scoop</span>
+        <h2 className="font-caprasimo text-3xl md:text-6xl lg:text-[72px] text-white uppercase leading-[1.1] md:leading-none tracking-tight max-w-3xl">
+          <span className="block drop-shadow-[4px_4px_0px_#406BB5]">Crafting Joy</span>
+          <span className="block drop-shadow-[4px_4px_0px_#406BB5]">In Every Scoop</span>
         </h2>
 
         {/* Scaled down paragraph text and margins */}
@@ -53,7 +53,7 @@ export default function VideoSection() {
           {/* Scaled down button padding, border, shadow, text size, and icon */}
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-white text-stone-950 font-jua border-[2px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-base uppercase tracking-widest"
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-white text-stone-950 font-jua border-[2px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-base uppercase tracking-widest"
           >
             Our Story <ChevronRight size={18} strokeWidth={3} />
           </Link>
@@ -61,7 +61,7 @@ export default function VideoSection() {
           {/* Scaled down secondary button padding, border, and text size */}
           <Link
             href="/flavors"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-transparent text-white font-jua border-[2px] border-white rounded-full hover:bg-white hover:text-stone-900 transition-colors text-base uppercase tracking-widest"
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-transparent text-white font-jua border-[2px] border-white rounded-full hover:bg-white hover:text-stone-900 transition-colors text-base uppercase tracking-widest"
           >
             View Flavors
           </Link>

@@ -119,7 +119,7 @@ export default function FeaturesBanner() {
                 {/* Custom solid SVGs don't need strokeWidth, slightly boosted size to 32 to compensate */}
                 <Icon size={32} />
               </div>
-              <span className="font-caprasimo text-2xl md:text-3xl text-stone-900 tracking-wide pt-1">
+              <span className="font-caprasimo text-xl md:text-3xl text-stone-900 tracking-wide pt-1">
                 {feature.text}
               </span>
             </div>
