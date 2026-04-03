@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function BestSellerSection() {
   return (
@@ -19,7 +22,13 @@ export default function BestSellerSection() {
       {/* Reduced max-width and gap between columns */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-8 relative z-10">
         {/* --- LEFT COLUMN: TEXT & CTA --- */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-4 text-center md:text-left">
+        <motion.div
+          initial={{ x: -40, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-4 text-center md:text-left"
+        >
           {/* Scaled down font sizes, strokes, and drop-shadows */}
           <h2 className="font-caprasimo flex flex-col items-center md:items-start text-4xl md:text-6xl lg:text-[72px] text-white uppercase tracking-tight [-webkit-text-stroke:1.5px_#1c1917] md:[-webkit-text-stroke:2px_#1c1917]">
             <span className="block leading-[0.9] drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] md:drop-shadow-[6px_6px_0px_rgba(28,25,23,1)]">Best</span>
@@ -42,10 +51,16 @@ export default function BestSellerSection() {
               Try It Now <ChevronRight size={18} strokeWidth={3} />
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* --- RIGHT COLUMN: REAL IMAGE & BADGE --- */}
-        <div className="w-full md:w-1/2 flex justify-center lg:justify-end relative min-h-[300px] md:min-h-[350px] lg:min-h-[400px] mt-8 md:mt-0">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          className="w-full md:w-1/2 flex justify-center lg:justify-end relative min-h-[300px] md:min-h-[350px] lg:min-h-[400px] mt-8 md:mt-0"
+        >
           {/* Scaled down image container size, borders, and shadows */}
           <div className="w-full max-w-[240px] md:max-w-[280px] lg:max-w-[340px] aspect-[3/4] bg-white border-[3px] border-stone-900 rounded-[2.5rem] shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] flex items-center justify-center relative duration-500 z-10 overflow-hidden">
             <Image
@@ -58,13 +73,19 @@ export default function BestSellerSection() {
           </div>
 
           {/* Scaled down floating badge */}
-          <div className="absolute bottom-4 -right-1 md:bottom-8 md:-right-4 bg-stone-900 text-white px-5 py-3 rounded-2xl border-[2px] border-white shadow-xl z-20 flex items-center gap-3 hover:rotate-0 transition-transform duration-300 cursor-default">
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "backOut", delay: 0.6 }}
+            className="absolute bottom-4 -right-1 md:bottom-8 md:-right-16 bg-stone-900 text-white px-5 py-3 rounded-2xl border-[2px] border-white shadow-xl z-20 flex items-center gap-3 hover:rotate-0 transition-transform duration-300 cursor-default"
+          >
             <div className="flex flex-col font-caprasimo uppercase text-right leading-[1.1] text-base lg:text-lg tracking-wide">
               <span>Strawberry</span>
               <span className="text-[#406BB5]">Bliss</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

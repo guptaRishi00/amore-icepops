@@ -1,18 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ServicesSection() {
   return (
     <section className="relative w-full bg-white py-16 md:py-24 px-5 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
-        <h2 className="font-caprasimo text-4xl md:text-5xl lg:text-6xl text-stone-900 uppercase leading-[1.1] tracking-tight mb-12 md:mb-30 text-center">
+        <motion.h2 
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="font-caprasimo text-4xl md:text-5xl lg:text-6xl text-stone-900 uppercase leading-[1.1] tracking-tight mb-12 md:mb-16 text-center"
+        >
           Featured Flavors
-        </h2>
+        </motion.h2>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8">
           {/* === COLUMN 1: MANGO === */}
-          <div className="flex flex-col items-start">
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+            className="flex flex-col items-start"
+          >
             {/* Scaled down border, border-radius, and shadow */}
             <div className="w-full aspect-[3/4] bg-stone-100 border-[2px] border-stone-900 rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
@@ -38,10 +53,16 @@ export default function ServicesSection() {
             >
               Order Now <ChevronRight size={16} strokeWidth={3} />
             </Link>
-          </div>
+          </motion.div>
 
           {/* === COLUMN 2: PEACH (Staggered Layout) === */}
-          <div className="flex flex-col items-start md:pt-6">
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+            className="flex flex-col items-start md:pt-6"
+          >
             <h3 className="font-caprasimo text-2xl lg:text-3xl text-stone-900 mb-3 uppercase tracking-wider order-2 md:order-none mt-6 md:mt-0">
               Perfect Peach
             </h3>
@@ -64,10 +85,16 @@ export default function ServicesSection() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* === COLUMN 3: GRAPE === */}
-          <div className="flex flex-col items-start">
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+            className="flex flex-col items-start"
+          >
             <div className="w-full aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5] bg-stone-100 border-[2px] border-stone-900 rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
                 src="/grape2.png"
@@ -90,7 +117,7 @@ export default function ServicesSection() {
             >
               Order Now <ChevronRight size={16} strokeWidth={3} />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

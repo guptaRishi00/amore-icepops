@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function VideoSection() {
   return (
@@ -26,7 +29,13 @@ export default function VideoSection() {
       {/* --- TEXT CONTENT OVERLAY --- */}
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 md:px-6">
         {/* Scaled down Floating Icon Badge with Penguin */}
-        <div className="mb-4 md:mb-5 w-16 h-16 bg-white border-[2px] border-stone-900 rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] overflow-hidden">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "backOut" }}
+          className="mb-4 md:mb-5 w-16 h-16 bg-white border-[2px] border-stone-900 rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] overflow-hidden"
+        >
           <Image
             src="/penguine2.svg"
             alt="Penguin Icon"
@@ -34,22 +43,37 @@ export default function VideoSection() {
             height={36}
             className="object-contain"
           />
-        </div>
+        </motion.div>
 
-        {/* Scaled down heading size and drop-shadow */}
-        <h2 className="font-caprasimo text-3xl md:text-6xl lg:text-[72px] text-white uppercase leading-[1.1] md:leading-none tracking-tight max-w-3xl">
+        <motion.h2
+          initial={{ y: 25, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+          className="font-caprasimo text-3xl md:text-6xl lg:text-[72px] text-white uppercase leading-[1.1] md:leading-none tracking-tight max-w-3xl"
+        >
           <span className="block drop-shadow-[4px_4px_0px_#406BB5]">Crafting Joy</span>
           <span className="block drop-shadow-[4px_4px_0px_#406BB5]">In Every Scoop</span>
-        </h2>
+        </motion.h2>
 
-        {/* Scaled down paragraph text and margins */}
-        <p className="font-jua text-lg md:text-xl text-white mt-4 md:mt-6 max-w-xl leading-relaxed drop-shadow-md">
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="font-jua text-lg md:text-xl text-white mt-4 md:mt-6 max-w-xl leading-relaxed drop-shadow-md"
+        >
           Take a journey through our kitchen and see how we turn real fruits and
           spices into the city's most legendary ice cream.
-        </p>
+        </motion.p>
 
-        {/* Scaled down button margins and gaps */}
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <motion.div
+          initial={{ y: 15, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.45 }}
+          className="mt-8 flex flex-wrap justify-center gap-4"
+        >
           {/* Scaled down button padding, border, shadow, text size, and icon */}
           <Link
             href="/about"
@@ -65,7 +89,7 @@ export default function VideoSection() {
           >
             View Flavors
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
