@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="px-5">
+    <section className="w-full px-5 md:px-8">
       <div className="relative w-full min-h-[86vh] flex items-center overflow-hidden py-16 md:py-24 rounded-xl">
         <Image
           src="/hero7.png"
@@ -28,7 +28,7 @@ export default function HeroSection() {
                 <span className="block leading-[0.9] drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] md:drop-shadow-[8px_8px_0px_rgba(28,25,23,1)]">Summer.</span>
               </h1>
               {/* Scaled up text size to text-xl/2xl and increased max-width */}
-              <p className="font-caprasimo text-stone-100 text-lg md:text-2xl max-w-xl leading-snug text-center sm:text-left drop-shadow-md">
+              <p className="font-caprasimo text-stone-100 text-lg md:text-2xl max-w-xl leading-snug text-left drop-shadow-md">
                 Dive into a frozen paradise and let our handcrafted ice-pops
                 take you to a land of pure joy.
               </p>

@@ -51,7 +51,7 @@ export default function FlavorsGrid() {
   return (
     <section className="relative w-full bg-[#FAF9F6] py-20 md:py-28 px-4 md:px-8 lg:px-12 z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-y-30">
           {allFlavors.map((flavor, idx) => (
             <div
               key={flavor.id}
@@ -68,7 +68,7 @@ export default function FlavorsGrid() {
                     backgroundSize: "16px 16px",
                   }}
                 />
-                
+
                 <Image
                   src={flavor.image}
                   alt={flavor.name}
@@ -82,7 +82,7 @@ export default function FlavorsGrid() {
                 <h2 className="font-caprasimo text-2xl md:text-3xl text-stone-900 uppercase tracking-wide mb-3">
                   {flavor.name}
                 </h2>
-                
+
                 <p className="font-jua text-stone-600 text-base md:text-lg mb-8 leading-relaxed max-w-xs">
                   {flavor.desc}
                 </p>

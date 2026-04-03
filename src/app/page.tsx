@@ -8,6 +8,7 @@ import VideoSection from "@/components/home/VideoSection";
 import WeOfferMemoriesSection from "@/components/home/WeOfferMemoriesSection";
 import AboutFruitPopsSection from "@/components/home/AboutFruitPopsSection";
 import Footer from "@/components/layout/Footer";
+import LocationsSection from "@/components/flavors/LocationsSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <BestSellerSection />
       <EventsSection />
       <VideoSection />
+      <LocationsSection />
       <Footer />
     </div>
   );

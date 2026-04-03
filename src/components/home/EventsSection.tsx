@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function EventsSection() {
   return (
-    <section className="w-full bg-[#FAF9F6] py-16 md:py-24 px-5 z-10 relative">
+    <section className="relative z-10 w-full bg-[#FAF9F6] py-16 md:py-24 px-5 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row bg-[#406BB5] border-4 border-stone-900 rounded-[2.5rem] shadow-[8px_8px_0px_0px_rgba(28,25,23,1)] overflow-hidden">
 
         {/* Left Side: Illustration / Visuals */}
@@ -19,7 +19,7 @@ export default function EventsSection() {
           />
 
           {/* Replaced Icon with Image */}
-          <div className="absolute inset-0 z-10 transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
+          <div className="absolute inset-0 z-10">
             <Image
               src="/party.png"
               alt="Party Ice Pop Event"

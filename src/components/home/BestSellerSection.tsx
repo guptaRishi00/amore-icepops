@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function BestSellerSection() {
   return (
     // Scaled down vertical padding and top margin
-    <section className="relative w-full bg-[#406BB5] py-16 px-4 md:px-8 lg:px-12 overflow-hidden lg:mt-12">
+    <section className="relative w-full bg-[#406BB5] py-16 md:py-24 px-5 md:px-8 overflow-hidden">
       {/* --- ADDED: Background Texture --- */}
       <div
         className="absolute inset-0 z-0 opacity-40 mix-blend-overlay"

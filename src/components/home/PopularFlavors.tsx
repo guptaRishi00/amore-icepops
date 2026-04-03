@@ -14,21 +14,27 @@ const flavors = [
 
 export default function PopularFlavors() {
   return (
-    <section className="w-full bg-white pt-12 lg:pt-16 px-5 lg:mt-0">
+    <section className="w-full bg-white py-16 md:py-24 px-5 md:px-8">
       <div className="max-w-8xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 lg:px-4">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col items-center justify-center mb-8 gap-4 lg:px-4 text-center">
+          <div className="flex items-center justify-center gap-4 md:gap-5 lg:mb-10">
             <Image
               src="/penguine2.svg"
-              alt="Flavors Icon"
-              width={32}
-              height={32}
-              className="object-contain"
+              alt="Flavors Icon Left"
+              width={48}
+              height={48}
+              className="object-contain drop-shadow-sm"
             />
-            <h2 className="font-caprasimo text-2xl md:text-4xl lg:text-[40px] text-stone-900 uppercase tracking-wide leading-none">
-              The Classic  <br className="hidden md:block lg:hidden" /> Collection{" "}
-              <span className="hidden lg:inline">-</span>
+            <h2 className="font-caprasimo text-3xl md:text-4xl lg:text-[45px] text-stone-900 uppercase tracking-wide leading-none text-center">
+              The Classic Collection
             </h2>
+            <Image
+              src="/penguine2.svg"
+              alt="Flavors Icon Right"
+              width={48}
+              height={48}
+              className="object-contain -scale-x-100 drop-shadow-sm"
+            />
           </div>
         </div>
 
