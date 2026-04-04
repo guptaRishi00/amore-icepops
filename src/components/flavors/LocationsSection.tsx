@@ -4,21 +4,21 @@ import { MapPin } from "lucide-react";
 
 export default function LocationsSection() {
   return (
-    <section className="w-full bg-[#FAF9F6] py-16 md:py-24 px-5 md:px-8 relative z-10">
+    <section className="w-full bg-[#FAF9F6] py-10 md:py-24 px-4 md:px-8 relative z-10">
       <div className="max-w-8xl mx-auto flex flex-col items-center">
 
         {/* Title */}
-        <h2 className="font-caprasimo text-4xl md:text-5xl lg:text-6xl text-stone-900 mb-12 text-center uppercase tracking-tight">
+        <h2 className="font-caprasimo text-3xl md:text-5xl lg:text-6xl text-stone-900 mb-8 md:mb-12 text-center uppercase tracking-tight">
           Experience Amore
         </h2>
 
         <div className="w-full">
           {/* Single Combined Card */}
-          <div className="flex flex-col bg-stone-100 border-4 border-stone-900 rounded-[2.5rem] overflow-hidden relative transition-transform duration-300 ">
+          <div className="flex flex-col bg-stone-100 border-4 border-stone-900 rounded-3xl md:rounded-[2.5rem] overflow-hidden relative transition-transform duration-300 ">
 
             {/* Unified Header */}
-            <div className="p-6 md:p-8 bg-[#E6F3EB] border-b-4 border-stone-900 flex justify-between items-center">
-              <h3 className="font-caprasimo text-2xl uppercase tracking-wider text-stone-900">
+            <div className="p-5 md:p-8 bg-[#E6F3EB] border-b-4 border-stone-900 flex justify-between items-center">
+              <h3 className="font-caprasimo text-xl md:text-2xl uppercase tracking-wider text-stone-900">
                 Visit Our Shop
               </h3>
               <div className="w-10 h-10 rounded-full bg-white border-2 border-stone-900 shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] flex items-center justify-center">

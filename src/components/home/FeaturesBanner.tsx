@@ -95,14 +95,14 @@ export default function FeaturesBanner() {
   const repeatedFeatures = [...features, ...features, ...features, ...features];
 
   return (
-    <section className="w-full bg-white py-6 overflow-hidden flex items-center border-y-4 border-stone-900">
+    <section className="w-full bg-white py-4 md:py-6 overflow-hidden flex items-center border-y-4 border-stone-900">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 30s linear infinite;
+          animation: marquee 20s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
@@ -110,16 +110,21 @@ export default function FeaturesBanner() {
       `}</style>
 
       {/* The moving track */}
-      <div className="flex w-max animate-marquee items-center gap-10 md:gap-16 px-5 md:px-8">
+      <div className="flex w-max animate-marquee items-center gap-10 md:gap-16 px-4 md:px-8">
         {repeatedFeatures.map((feature, index) => {
           const Icon = feature.icon;
           return (
             <div key={index} className="flex items-center gap-4 shrink-0">
-              <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-[#406BB5]">
-                {/* Custom solid SVGs don't need strokeWidth, slightly boosted size to 32 to compensate */}
-                <Icon size={32} />
+              <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-100 flex items-center justify-center text-[#406BB5]">
+                {/* Custom solid SVGs don't need strokeWidth */}
+                <span className="hidden md:block">
+                  <Icon size={32} />
+                </span>
+                <span className="md:hidden">
+                  <Icon size={24} />
+                </span>
               </div>
-              <span className="font-caprasimo text-xl md:text-3xl text-stone-900 tracking-wide pt-1">
+              <span className="font-caprasimo text-base md:text-3xl text-stone-900 tracking-wide pt-1">
                 {feature.text}
               </span>
             </div>

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function VideoSection() {
   return (
     // Scaled down the height of the section, gave flex min-height and padding for mobile
-    <section className="relative w-full min-h-[75vh] py-16 md:py-0 md:min-h-0 md:h-[65vh] overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative w-full min-h-[60vh] py-12 md:py-0 md:min-h-0 md:h-[65vh] overflow-hidden flex flex-col items-center justify-center">
       {/* --- BACKGROUND VIDEO --- */}
       <div className="absolute inset-0 z-0">
         <video
@@ -34,14 +34,14 @@ export default function VideoSection() {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "backOut" }}
-          className="mb-4 md:mb-5 w-16 h-16 bg-white border-[2px] border-stone-900 rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] overflow-hidden"
+          className="mb-4 md:mb-5 w-12 h-12 md:w-16 md:h-16 bg-white border-2 border-stone-900 rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] overflow-hidden"
         >
           <Image
             src="/penguine2.svg"
             alt="Penguin Icon"
-            width={36}
-            height={36}
-            className="object-contain"
+            width={28}
+            height={28}
+            className="object-contain md:w-9 md:h-9"
           />
         </motion.div>
 
@@ -50,10 +50,10 @@ export default function VideoSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-          className="font-caprasimo text-3xl md:text-6xl lg:text-[72px] text-white uppercase leading-[1.1] md:leading-none tracking-tight max-w-3xl"
+          className="font-caprasimo text-2xl md:text-6xl lg:text-[72px] text-white uppercase leading-[1.1] md:leading-none tracking-tight max-w-3xl"
         >
-          <span className="block drop-shadow-[4px_4px_0px_#406BB5]">Crafting Joy</span>
-          <span className="block drop-shadow-[4px_4px_0px_#406BB5]">In Every Scoop</span>
+          <span className="block drop-shadow-[3px_3px_0px_#406BB5] md:drop-shadow-[4px_4px_0px_#406BB5]">Crafting Joy</span>
+          <span className="block drop-shadow-[3px_3px_0px_#406BB5] md:drop-shadow-[4px_4px_0px_#406BB5]">In Every Scoop</span>
         </motion.h2>
 
         <motion.p
@@ -61,7 +61,7 @@ export default function VideoSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          className="font-jua text-lg md:text-xl text-white mt-4 md:mt-6 max-w-xl leading-relaxed drop-shadow-md"
+          className="font-jua text-base md:text-xl text-white mt-4 md:mt-6 max-w-xl leading-relaxed drop-shadow-md"
         >
           Take a journey through our kitchen and see how we turn real fruits and
           spices into the city's most legendary ice cream.
@@ -72,20 +72,22 @@ export default function VideoSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.45 }}
-          className="mt-8 flex flex-wrap justify-center gap-4"
+          className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4"
         >
           {/* Scaled down button padding, border, shadow, text size, and icon */}
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-white text-stone-950 font-jua border-[2px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-base uppercase tracking-widest"
+            className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-3 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-sm md:text-base uppercase tracking-widest"
           >
-            Our Story <ChevronRight size={18} strokeWidth={3} />
+            Our Story 
+            <span className="hidden md:inline-flex"><ChevronRight size={18} strokeWidth={3} /></span>
+            <span className="md:hidden inline-flex"><ChevronRight size={16} strokeWidth={3} /></span>
           </Link>
 
           {/* Scaled down secondary button padding, border, and text size */}
           <Link
             href="/flavors"
-            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-transparent text-white font-jua border-[2px] border-white rounded-full hover:bg-white hover:text-stone-900 transition-colors text-base uppercase tracking-widest"
+            className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-3 bg-transparent text-white font-jua border-2 border-white rounded-full hover:bg-white hover:text-stone-900 transition-colors text-sm md:text-base uppercase tracking-widest"
           >
             View Flavors
           </Link>
