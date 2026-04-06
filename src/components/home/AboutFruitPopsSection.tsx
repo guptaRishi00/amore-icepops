@@ -1,100 +1,114 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const stats = [
+  { value: "100%", label: "Real Fruit" },
+  { value: "50+", label: "Flavors" },
+  { value: "10K+", label: "Happy Customers" },
+];
+
 export default function AboutFruitPopsSection() {
   return (
-    <section className="relative z-10 w-full bg-white py-10 md:py-24 px-4 md:px-8">
-      <div className="w-full mx-auto bg-black border-4 border-stone-900 rounded-2xl relative overflow-hidden min-h-[60vh] md:min-h-[70vh] lg:min-h-[85vh] flex items-center">
+    <section className="relative w-full bg-white py-16 md:py-28 px-4 md:px-8 overflow-hidden">
+      {/* Subtle decorative dots in background */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #1c1917 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
 
-        {/* Background Image with Darker Overlay for Story Mood */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image
-            src="/about.png"
-            alt="Our Story Background"
-            fill
-            className="object-cover object-center"
-          />
-          {/* Moody Black overlay mask */}
-          <div className="absolute inset-0 bg-stone-900/50" />
-        </div>
-
-        <div className="w-full max-w-7xl mx-auto px-5 md:px-14 py-10 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between relative z-10">
-
-          {/* Left Side: Story Intro */}
-          <div className="flex-1 w-full relative flex flex-col items-start lg:pr-10">
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#FFB000] text-stone-900 border-[3px] border-stone-900 rounded-full font-jua text-sm md:text-base uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] transition-all mb-8"
-            >
-              <Heart size={18} fill="currentColor" strokeWidth={3} /> Our Story
-            </motion.div>
-
-            <motion.h2
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-              className="font-caprasimo text-4xl sm:text-6xl lg:text-7xl text-white uppercase tracking-tight [-webkit-text-stroke:1px_#1c1917] md:[-webkit-text-stroke:2px_#1c1917] drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] md:drop-shadow-[5px_5px_0px_rgba(28,25,23,1)] leading-[1.05] mb-6 md:mb-8"
-            >
-              A Taste of <br className="hidden sm:block" />
-              Real Magic.
-            </motion.h2>
-
-            <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-              className="font-jua text-white/90 text-base md:text-xl lg:text-2xl leading-relaxed max-w-xl drop-shadow-md"
-            >
-              Born from a love of authentic, sun-ripened flavors and a desire to make people smile. We set out to redefine what a frozen treat could be.
-            </motion.p>
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
+        {/* Left: Image */}
+        <motion.div
+          initial={{ x: -40, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="w-full lg:w-[48%] flex"
+        >
+          <div className="relative w-full min-h-[340px] md:min-h-[460px] lg:min-h-0 bg-stone-100 border-4 border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] overflow-hidden">
+            <Image
+              src="/about.png"
+              alt="About Amore Fruit Pops"
+              fill
+              className="object-cover"
+            />
           </div>
+        </motion.div>
 
-          {/* Right Side: Narrative Timeline/Cards */}
-          <div className="flex-[1.2] w-full flex flex-col gap-8 md:gap-10">
+        {/* Right: Content */}
+        <div className="w-full lg:w-[52%] flex flex-col justify-center gap-6 md:gap-8 text-center lg:text-left items-center lg:items-start py-4 lg:py-8">
+          {/* Badge */}
+          <motion.div
+            initial={{ y: 16, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFB000] text-stone-900 border-[3px] border-stone-900 rounded-full font-jua text-sm md:text-base uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]"
+          >
+            <Sparkles size={16} fill="currentColor" strokeWidth={2.5} />
+            About Us
+          </motion.div>
 
-            {/* Story Card 1 */}
-            <motion.div
-              initial={{ x: 40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              className="bg-[#FAF9F6] border-4 border-stone-900 rounded-3xl md:rounded-4xl p-6 md:p-10 shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] relative transition-transform hover:-translate-y-2 duration-300"
-            >
-              <div className="absolute -top-6 -left-4 md:-left-6 bg-[#406BB5] text-white w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-4 border-stone-900 font-caprasimo text-xl md:text-2xl shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] -rotate-6">
-                1
+          {/* Heading */}
+          <motion.h2
+            initial={{ y: 24, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="font-caprasimo text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] text-stone-900 uppercase leading-[1.08] tracking-wider max-w-xl"
+          >
+            Handcrafted With Love, Made With Real Fruit.
+          </motion.h2>
+
+          {/* Description */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="space-y-4 max-w-lg"
+          >
+            <p className="font-jua text-stone-700 text-base md:text-lg lg:text-xl leading-relaxed">
+              Born from a love of authentic, sun-ripened flavors and a desire to
+              bring smiles to every face. We set out to redefine what a frozen
+              treat could be.
+            </p>
+            <p className="font-jua text-stone-600 text-base md:text-lg leading-relaxed">
+              No artificial colors, no shortcuts — just real, juicy fruit purees
+              hand-molded into delightful works of art. Every pop is a labor of
+              love, as beautiful as it is delicious.
+            </p>
+          </motion.div>
+
+          {/* Stats Row */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 }}
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-5 pt-4"
+          >
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center px-5 md:px-7 py-4 md:py-5 bg-white border-[3px] border-stone-900 rounded-2xl shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] min-w-[110px]"
+              >
+                <span className="font-caprasimo text-2xl md:text-3xl text-stone-900 leading-none">
+                  {stat.value}
+                </span>
+                <span className="font-jua text-xs md:text-sm text-stone-500 uppercase tracking-wider mt-1.5">
+                  {stat.label}
+                </span>
               </div>
-              <h3 className="font-caprasimo text-xl md:text-2xl text-stone-900 mb-3 md:mb-4 uppercase tracking-wider">The Inspiration</h3>
-              <p className="font-jua text-stone-700 text-base md:text-lg leading-relaxed">
-                It all started on the vibrant streets of Thailand. Experiencing the joy of handmade ice cream rolls sparked our obsession. We wanted to distill that pure, joyful energy into a perfectly crafted fruit pop.
-              </p>
-            </motion.div>
-
-            {/* Story Card 2 - Offset visually */}
-            <motion.div
-              initial={{ x: 40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-              className="bg-white border-4 border-stone-900 rounded-3xl md:rounded-4xl p-6 md:p-10 shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] relative transition-transform hover:-translate-y-2 duration-300 lg:ml-12"
-            >
-              <div className="absolute -top-6 -left-4 md:-left-6 bg-[#FFDEE6] text-stone-900 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-4 border-stone-900 font-caprasimo text-xl md:text-2xl shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] rotate-6">
-                2
-              </div>
-              <h3 className="font-caprasimo text-xl md:text-2xl text-stone-900 mb-3 md:mb-4 uppercase tracking-wider">The Craft</h3>
-              <p className="font-jua text-stone-700 text-base md:text-lg leading-relaxed">
-                No artificial colors, no boring shapes. Just real, juicy fruit purees hand-molded into delightful, nature-filled works of art. Every pop is a labor of love designed to be as beautiful as it is delicious.
-              </p>
-            </motion.div>
-
-          </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

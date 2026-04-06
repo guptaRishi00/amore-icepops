@@ -15,9 +15,10 @@ export default function Home() {
     <div className="">
       <HeroSection />
       <AboutFruitPopsSection />
-      <PopularFlavors />
-      <WeOfferMemoriesSection />
+
+      {/* <WeOfferMemoriesSection /> */}
       <FeaturesBanner />
+      <PopularFlavors />
       <ServicesSection />
       <BestSellerSection />
       <EventsSection />

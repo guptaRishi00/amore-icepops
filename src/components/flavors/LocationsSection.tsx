@@ -39,24 +39,41 @@ export default function LocationsSection() {
                 />
               </div>
 
-              {/* Part 2: Google Maps */}
-              <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] bg-stone-200">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  scrolling="no"
-                  marginHeight={0}
-                  marginWidth={0}
-                  src="https://maps.google.com/maps?q=India&t=&z=5&ie=UTF8&iwloc=&output=embed"
-                  className="grayscale-20 contrast-125 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-                  title="Amore Locations Map"
-                ></iframe>
+              {/* Part 2: Written Address */}
+              <div className="relative w-full min-h-[500px] bg-[#FFDDE6] p-8 md:p-12 flex flex-col justify-center items-start border-stone-900 group">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-caprasimo text-2xl md:text-3xl text-stone-900 uppercase tracking-wider mb-2">
+                      Our Flagship Store
+                    </h4>
+                    <div className="w-20 h-1.5 bg-stone-900 rounded-full mb-6" />
+                  </div>
 
-                {/* Decor Overlay */}
-                <div className="absolute bottom-6 right-6 z-10 pointer-events-none">
-                  <div className="px-4 py-2 bg-[#FFB000] border-2 border-stone-900 rounded-full font-jua text-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] -rotate-6">
-                    Currently in India!
+                  <div className="space-y-4">
+                    <p className="font-jua text-xl md:text-2xl text-stone-800 leading-tight">
+                      123 Popsicle Avenue, <br />
+                      Fruit Park, Road No. 45, <br />
+                      Mumbai, Maharashtra 400001, <br />
+                      India
+                    </p>
+
+                    <div className="flex flex-col gap-2 pt-4">
+                      <p className="font-caprasimo text-lg text-stone-900 uppercase tracking-widest">
+                        Store Hours
+                      </p>
+                      <p className="font-jua text-lg text-stone-700">
+                        Mon - Sun: 11:00 AM - 11:00 PM
+                      </p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                {/* Decor Overlay - Repositioned */}
+                <div className="absolute top-6 right-6 z-10 pointer-events-none hidden md:block">
+                  <div className="px-4 py-2 bg-[#FFB000] border-2 border-stone-900 rounded-full font-jua text-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] rotate-6">
+                    Amore is Here! 📍
                   </div>
                 </div>
               </div>
