@@ -23,9 +23,8 @@ export default function BestSellerSection() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-8 relative z-10">
         {/* --- LEFT COLUMN: TEXT & CTA --- */}
         <div className="reveal-left w-full md:w-1/2 flex flex-col items-center md:items-start space-y-4 text-center md:text-left">
-          <h2 className="font-caprasimo flex flex-col items-center md:items-start text-3xl md:text-6xl lg:text-[72px] text-white uppercase tracking-tight [-webkit-text-stroke:1px_#1c1917] md:[-webkit-text-stroke:2px_#1c1917]">
-            <span className="block leading-[0.9] drop-shadow-[3px_3px_0px_rgba(28,25,23,1)] md:drop-shadow-[6px_6px_0px_rgba(28,25,23,1)]">Best</span>
-            <span className="block leading-[0.9] drop-shadow-[3px_3px_0px_rgba(28,25,23,1)] md:drop-shadow-[6px_6px_0px_rgba(28,25,23,1)]">Seller</span>
+          <h2 className="font-caprasimo flex flex-col items-center md:items-start text-3xl md:text-6xl lg:text-[80px] text-white uppercase tracking-tight [-webkit-text-stroke:1px_#1c1917] md:[-webkit-text-stroke:2px_#1c1917]">
+            <span className="block leading-[0.9] drop-shadow-[3px_3px_0px_rgba(28,25,23,1)] md:drop-shadow-[6px_6px_0px_rgba(28,25,23,1)]">Best Seller</span>
             <span className="block leading-[0.9] drop-shadow-[3px_3px_0px_rgba(28,25,23,1)] md:drop-shadow-[6px_6px_0px_rgba(28,25,23,1)]">IcePop</span>
           </h2>
 
