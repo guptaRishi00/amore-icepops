@@ -42,7 +42,7 @@ export default function AboutFruitPopsSection() {
         <div className="w-full lg:w-[45%] flex flex-col justify-center gap-6 md:gap-8 text-center lg:text-left items-center lg:items-start py-4 lg:py-8">
           {/* Badge */}
           <div className="reveal inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFB000] text-stone-900 border-[3px] border-stone-900 rounded-full font-jua text-sm md:text-base uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
-            <Sparkles size={16} fill="currentColor" strokeWidth={2.5} />
+            {/* <Sparkles size={16} fill="currentColor" strokeWidth={2.5} /> */}
             About Us
           </div>
 
