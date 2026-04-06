@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function WeOfferMemoriesSection() {
   return (
     <section className="w-full bg-white py-10 md:py-24 px-4 md:px-8">
-      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12">
+      <div className="w-full mx-auto flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12">
 
         {/* Image side - increased width */}
         <motion.div
@@ -50,7 +50,7 @@ export default function WeOfferMemoriesSection() {
                   className="object-contain w-10 md:w-16 lg:w-[72px] hover:-rotate-12 transition-transform duration-300"
                 />
               </span>
-              icepops that evoke memories.
+              icepops that evoke memories
             </h2>
 
             <p className="font-jua text-base md:text-lg lg:text-xl text-stone-800 leading-relaxed max-w-lg">

@@ -1,87 +1,92 @@
-import React from "react";
 import Image from "next/image";
-import { MapPin } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
 
 export default function LocationsSection() {
   return (
-    <section className="w-full bg-[#FAF9F6] py-10 md:py-24 px-4 md:px-8 relative z-10">
-      <div className="max-w-8xl mx-auto flex flex-col items-center">
+    <section className="w-full bg-white py-10 md:py-24 px-4 md:px-8">
+      <div className="mx-auto">
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-caprasimo text-3xl md:text-5xl text-stone-900 uppercase tracking-tight mb-4">
+            Visit Us
+          </h2>
+          <p className="font-jua text-stone-600 text-base md:text-lg max-w-lg mx-auto">
+            Come taste the magic in person at our flagship store
+          </p>
+        </div>
 
-        {/* Title */}
-        <h2 className="font-caprasimo text-3xl md:text-5xl lg:text-6xl text-stone-900 mb-8 md:mb-12 text-center uppercase tracking-tight">
-          Experience Amore
-        </h2>
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          {/* Store Image */}
+          <div className="relative w-full h-[280px] md:h-[420px] bg-stone-100 border-[3px] border-stone-900 rounded-3xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(28,25,23,1)]">
+            <Image
+              src="/shop3.png"
+              alt="Amore Store"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-        <div className="w-full">
-          {/* Single Combined Card */}
-          <div className="flex flex-col bg-stone-100 border-4 border-stone-900 rounded-3xl md:rounded-[2.5rem] overflow-hidden relative transition-transform duration-300 ">
-
-            {/* Unified Header */}
-            <div className="p-5 md:p-8 bg-[#E6F3EB] border-b-4 border-stone-900 flex justify-between items-center">
-              <h3 className="font-caprasimo text-xl md:text-2xl uppercase tracking-wider text-stone-900">
-                Visit Our Shop
-              </h3>
-              <div className="w-10 h-10 rounded-full bg-white border-2 border-stone-900 shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] flex items-center justify-center">
-                <MapPin size={20} strokeWidth={3} className="text-stone-900" />
+          {/* Store Info */}
+          <div className="flex flex-col gap-6 md:gap-8 justify-center">
+            {/* Address Card */}
+            <div className="bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 shrink-0 bg-[#FFDDE6] border-2 border-stone-900 rounded-full flex items-center justify-center">
+                  <MapPin size={18} strokeWidth={3} className="text-stone-900" />
+                </div>
+                <div>
+                  <h3 className="font-caprasimo text-lg md:text-xl text-stone-900 uppercase tracking-wider mb-2">
+                    Our Store
+                  </h3>
+                  <p className="font-jua text-stone-700 text-base md:text-lg leading-relaxed">
+                    123 Popsicle Avenue, Fruit Park,<br />
+                    Road No. 45, Mumbai,<br />
+                    Maharashtra 400001, India
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Split Content Body */}
-            <div className="grid grid-cols-1 md:grid-cols-2">
-
-              {/* Part 1: Single Image */}
-              <div className="relative w-full aspect-square md:aspect-auto md:h-[500px] border-b-4 md:border-b-0 md:border-r-4 border-stone-900 overflow-hidden bg-white group">
-                <Image
-                  src="/shop3.png"
-                  alt="Amore Experience"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Part 2: Written Address */}
-              <div className="relative w-full min-h-[500px] bg-[#FFDDE6] p-8 md:p-12 flex flex-col justify-center items-start border-stone-900 group">
-                <div className="space-y-6">
+            {/* Hours & Phone Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              {/* Hours */}
+              <div className="bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 shrink-0 bg-[#FFB000] border-2 border-stone-900 rounded-full flex items-center justify-center">
+                    <Clock size={18} strokeWidth={3} className="text-stone-900" />
+                  </div>
                   <div>
-                    <h4 className="font-caprasimo text-2xl md:text-3xl text-stone-900 uppercase tracking-wider mb-2">
-                      Our Flagship Store
-                    </h4>
-                    <div className="w-20 h-1.5 bg-stone-900 rounded-full mb-6" />
-                  </div>
-
-                  <div className="space-y-4">
-                    <p className="font-jua text-xl md:text-2xl text-stone-800 leading-tight">
-                      123 Popsicle Avenue, <br />
-                      Fruit Park, Road No. 45, <br />
-                      Mumbai, Maharashtra 400001, <br />
-                      India
+                    <h3 className="font-caprasimo text-base md:text-lg text-stone-900 uppercase tracking-wider mb-1">
+                      Hours
+                    </h3>
+                    <p className="font-jua text-stone-700 text-sm md:text-base leading-relaxed">
+                      Mon – Sun<br />
+                      11:00 AM – 11:00 PM
                     </p>
-
-                    <div className="flex flex-col gap-2 pt-4">
-                      <p className="font-caprasimo text-lg text-stone-900 uppercase tracking-widest">
-                        Store Hours
-                      </p>
-                      <p className="font-jua text-lg text-stone-700">
-                        Mon - Sun: 11:00 AM - 11:00 PM
-                      </p>
-                    </div>
-                  </div>
-
-
-                </div>
-
-                {/* Decor Overlay - Repositioned */}
-                <div className="absolute top-6 right-6 z-10 pointer-events-none hidden md:block">
-                  <div className="px-4 py-2 bg-[#FFB000] border-2 border-stone-900 rounded-full font-jua text-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] rotate-6">
-                    Amore is Here! 📍
                   </div>
                 </div>
               </div>
 
+              {/* Phone */}
+              <div className="bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 shrink-0 bg-[#406BB5] border-2 border-stone-900 rounded-full flex items-center justify-center">
+                    <Phone size={18} strokeWidth={3} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-caprasimo text-base md:text-lg text-stone-900 uppercase tracking-wider mb-1">
+                      Call Us
+                    </h3>
+                    <p className="font-jua text-stone-700 text-sm md:text-base leading-relaxed">
+                      +91 98765 43210
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

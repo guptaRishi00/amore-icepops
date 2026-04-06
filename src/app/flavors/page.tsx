@@ -4,6 +4,7 @@ import FlavorsHero from "@/components/flavors/FlavorsHero";
 import FlavorsGrid from "@/components/flavors/FlavorsGrid";
 import LocationsSection from "@/components/flavors/LocationsSection";
 import BestSellerSection from "@/components/home/BestSellerSection";
+import VideoSection from "@/components/home/VideoSection";
 
 export default function FlavorsPage() {
   return (
@@ -22,6 +23,7 @@ export default function FlavorsPage() {
 
         {/* Best Seller Section */}
         <BestSellerSection />
+        <VideoSection />
       </main>
 
       {/* Global Neo-brutalist Footer */}

@@ -55,10 +55,10 @@ export default function FlavorsGrid() {
           {allFlavors.map((flavor, idx) => (
             <div
               key={flavor.id}
-              className="group flex flex-col items-center bg-white border-[3px] border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[10px_10px_0px_0px_rgba(28,25,23,1)]"
+              className="flex flex-col items-center bg-white border-[3px] border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] overflow-hidden"
             >
               {/* Image Container */}
-              <div className="w-full h-[300px] md:h-[480px] bg-stone-100 border-b-[3px] border-stone-900 relative overflow-hidden flex items-center justify-center">
+              <div className="w-full h-[220px] md:h-[320px] bg-stone-100 border-b-[3px] border-stone-900 relative overflow-hidden flex items-center justify-center">
                 {/* Background dot pattern inside card */}
                 <div
                   className="absolute inset-0 opacity-30 mix-blend-multiply"
@@ -73,7 +73,7 @@ export default function FlavorsGrid() {
                   src={flavor.image}
                   alt={flavor.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
+                  className="object-cover drop-shadow-xl"
                 />
               </div>
 

@@ -5,7 +5,7 @@ import { Grape } from "lucide-react";
 // Using fill="currentColor" to inherit the text-[#406BB5] color from the parent div.
 // The cutout details use fill="#f3f4f6" to match the bg-gray-100 of the circle, creating negative space.
 
-const CustomPalette = ({ size }:any) => (
+const CustomPalette = ({ size }: any) => (
   <svg
     width={size}
     height={size}
@@ -17,7 +17,7 @@ const CustomPalette = ({ size }:any) => (
   </svg>
 );
 
-const LeafTubIcon = ({ size }:any) => (
+const LeafTubIcon = ({ size }: any) => (
   <svg
     width={size}
     height={size}
@@ -39,7 +39,7 @@ const LeafTubIcon = ({ size }:any) => (
   </svg>
 );
 
-const IceCreamBowlIcon = ({ size }:any) => (
+const IceCreamBowlIcon = ({ size }: any) => (
   <svg
     width={size}
     height={size}
@@ -58,7 +58,7 @@ const IceCreamBowlIcon = ({ size }:any) => (
   </svg>
 );
 
-const StrawberryIcon = ({ size }:any) => (
+const StrawberryIcon = ({ size }: any) => (
   <svg
     width={size}
     height={size}
@@ -95,7 +95,7 @@ export default function FeaturesBanner() {
   const repeatedFeatures = [...features, ...features, ...features, ...features];
 
   return (
-    <section className="w-full bg-white py-4 md:py-6 overflow-hidden flex items-center border-y-4 border-stone-900">
+    <section className="w-full bg-white py-4 md:py-6 overflow-hidden flex items-center">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }

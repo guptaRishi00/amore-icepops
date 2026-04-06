@@ -3,32 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function ServicesSection() {
+  const ref = useScrollReveal();
+
   return (
-    <section className="relative w-full bg-white py-10 md:py-24 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
-        <motion.h2 
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="font-caprasimo text-3xl md:text-5xl lg:text-6xl text-stone-900 uppercase leading-[1.1] tracking-tight mb-10 md:mb-16 text-center"
-        >
+    <section ref={ref} className="relative w-full bg-white py-10 md:py-24 px-4 md:px-8 overflow-hidden">
+      <div className="mx-auto relative z-10 flex flex-col items-center">
+        <h2 className="reveal font-caprasimo text-3xl md:text-5xl lg:text-5xl text-stone-900 uppercase leading-[1.1] tracking-tight mb-10 md:mb-16 text-center">
           Featured Flavors
-        </motion.h2>
+        </h2>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8">
           {/* === COLUMN 1: MANGO === */}
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="flex flex-col items-center md:items-start text-center md:text-left"
-          >
-            {/* Scaled down border, border-radius, and shadow */}
+          <div className="reveal reveal-delay-1 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="w-full aspect-3/4 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
                 src="/mango.png"
@@ -38,7 +27,6 @@ export default function ServicesSection() {
               />
             </div>
 
-            {/* Scaled down text and margins */}
             <h3 className="font-caprasimo text-2xl lg:text-3xl text-stone-900 mt-6 mb-3 uppercase tracking-wider">
               Tropical Mango
             </h3>
@@ -52,16 +40,10 @@ export default function ServicesSection() {
             >
               Order Now <ChevronRight size={16} strokeWidth={3} />
             </Link>
-          </motion.div>
+          </div>
 
-          {/* === COLUMN 2: PEACH (Staggered Layout) === */}
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-            className="flex flex-col items-center md:items-start text-center md:text-left md:pt-6"
-          >
+          {/* === COLUMN 2: PEACH === */}
+          <div className="reveal reveal-delay-2 flex flex-col items-center md:items-start text-center md:text-left md:pt-6">
             <h3 className="font-caprasimo text-2xl lg:text-3xl text-stone-900 mb-3 uppercase tracking-wider order-2 md:order-0 mt-6 md:mt-0">
               Perfect Peach
             </h3>
@@ -84,16 +66,10 @@ export default function ServicesSection() {
                 className="object-cover"
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* === COLUMN 3: GRAPE === */}
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
-            className="flex flex-col items-center md:items-start text-center md:text-left"
-          >
+          <div className="reveal reveal-delay-3 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="w-full aspect-4/3 md:aspect-3/4 lg:aspect-4/5 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
                 src="/grape2.png"
@@ -116,7 +92,7 @@ export default function ServicesSection() {
             >
               Order Now <ChevronRight size={16} strokeWidth={3} />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

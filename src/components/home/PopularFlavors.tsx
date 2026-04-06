@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const flavors = [
   { name: "Mango", id: "mango", image: "/mango3.png" },
@@ -15,6 +15,7 @@ const flavors = [
 export default function PopularFlavors() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const sectionRef = useScrollReveal();
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -30,16 +31,13 @@ export default function PopularFlavors() {
         const maxScroll = scrollWidth - clientWidth;
 
         if (scrollLeft >= maxScroll - 10) {
-          // Reset to start if at the end
           scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
         } else {
-          // Scroll to next item (approx 80vw for mobile)
           scrollContainer.scrollBy({ left: clientWidth * 0.8, behavior: "smooth" });
         }
-      }, 3500); // Scroll every 3.5 seconds
+      }, 3500);
     };
 
-    // Only auto-scroll on mobile/tablet (less than 768px typically)
     const handleResize = () => {
       clearInterval(intervalId);
       if (window.innerWidth < 768) {
@@ -57,15 +55,9 @@ export default function PopularFlavors() {
   }, [isPaused]);
 
   return (
-    <section className="w-full bg-white py-10 md:py-24 px-4 md:px-8">
-      <div className="max-w-8xl mx-auto">
-        <motion.div
-           initial={{ y: 30, opacity: 0 }}
-           whileInView={{ y: 0, opacity: 1 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.6, ease: "easeOut" }}
-           className="flex flex-col items-center justify-center mb-8 md:mb-12 gap-4 text-center"
-        >
+    <section ref={sectionRef} className="w-full bg-white py-10 md:py-24 px-4 md:px-8">
+      <div className="mx-auto">
+        <div className="reveal flex flex-col items-center justify-center mb-8 md:mb-12 gap-4 text-center">
           <div className="flex items-center justify-center gap-3 md:gap-5">
             <Image
               src="/penguine2.svg"
@@ -85,24 +77,20 @@ export default function PopularFlavors() {
               className="object-contain -scale-x-100 drop-shadow-sm md:w-12 md:h-12"
             />
           </div>
-        </motion.div>
+        </div>
 
-        <div 
+        <div
           ref={scrollRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
-          className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-5 snap-x snap-mandatory gap-5 lg:gap-8 pb-6 md:pb-2 pt-2 px-2 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-5 snap-x snap-mandatory gap-5 lg:gap-8 pb-6 md:pb-2 pt-2 px-2 md:px-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
         >
           {flavors.map((flavor, index) => (
-            <motion.div
+            <div
               key={`${flavor.id}-${index}`}
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-              className="flex flex-col items-center gap-3 shrink-0 snap-center min-w-[80vw] sm:min-w-[300px] md:min-w-0"
+              className={`reveal reveal-delay-${index + 1} flex flex-col items-center gap-3 shrink-0 snap-center min-w-[80vw] sm:min-w-[300px] md:min-w-0`}
             >
               <div className="w-full aspect-4/5 bg-stone-50 border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden transition-transform hover:-translate-y-2 duration-300 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] group">
                 <Image
@@ -116,7 +104,7 @@ export default function PopularFlavors() {
               <h3 className="font-caprasimo text-stone-900 text-lg md:text-xl uppercase tracking-wider text-center mt-2">
                 {flavor.name}
               </h3>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
