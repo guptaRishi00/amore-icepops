@@ -8,7 +8,7 @@ export default function EventsSection() {
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="relative z-10 w-full bg-[#FAF9F6] py-10 md:py-24 px-4 md:px-8">
+    <section ref={ref} className="relative z-10 w-full bg-[#FAF9F6] py-10 md:py-24 px-6 lg:px-20">
       <div className="reveal mx-auto flex flex-col md:flex-row bg-[#406BB5] border-4 border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[8px_8px_0px_0px_rgba(28,25,23,1)] overflow-hidden">
 
         {/* Left Side: Illustration / Visuals */}

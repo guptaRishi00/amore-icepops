@@ -3,7 +3,7 @@ import { MapPin, Clock, Phone } from "lucide-react";
 
 export default function LocationsSection() {
   return (
-    <section className="w-full bg-white py-10 md:py-24 px-4 md:px-8">
+    <section className="w-full bg-white py-10 md:py-24 px-6 lg:px-20">
       <div className="mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">

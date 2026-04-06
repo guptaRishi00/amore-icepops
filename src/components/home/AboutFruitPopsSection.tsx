@@ -14,7 +14,7 @@ export default function AboutFruitPopsSection() {
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="relative w-full bg-white py-16 md:py-28 px-4 md:px-8 overflow-hidden">
+    <section ref={ref} className="relative w-full bg-white py-16 md:py-28 px-6 lg:px-20 overflow-hidden">
       {/* Subtle decorative dots in background */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"

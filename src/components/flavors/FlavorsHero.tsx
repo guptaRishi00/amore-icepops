@@ -31,7 +31,7 @@ export default function FlavorsHero() {
             Explore All
           </span>
           <span className="block leading-[0.9] drop-shadow-[3px_3px_0px_rgba(28,25,23,1)] md:drop-shadow-[8px_8px_0px_rgba(28,25,23,1)]">
-            Flavors.
+            Flavors
           </span>
         </h1>
 
