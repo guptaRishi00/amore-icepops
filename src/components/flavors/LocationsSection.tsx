@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone, ArrowUpRight } from "lucide-react";
 
 export default function LocationsSection() {
   return (
@@ -69,21 +69,21 @@ export default function LocationsSection() {
               </div>
 
               {/* Phone */}
-              <div className="bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
+              <a href="tel:+919876543210" className="block bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 shrink-0 bg-[#406BB5] border-2 border-stone-900 rounded-full flex items-center justify-center">
                     <Phone size={18} strokeWidth={3} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="font-caprasimo text-base md:text-lg text-stone-900 uppercase tracking-wider mb-1">
-                      Call Us
+                    <h3 className="font-caprasimo text-base md:text-lg text-stone-900 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                      Call Us <ArrowUpRight size={14} strokeWidth={3} className="text-stone-500" />
                     </h3>
                     <p className="font-jua text-stone-700 text-sm md:text-base leading-relaxed">
                       +91 98765 43210
                     </p>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
