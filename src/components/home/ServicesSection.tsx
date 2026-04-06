@@ -9,7 +9,7 @@ export default function ServicesSection() {
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="relative w-full bg-white py-10 md:py-24 px-6 lg:px-20 overflow-hidden">
+    <section ref={ref} className="relative w-full bg-white py-10 md:pb-24 px-6 lg:px-20 overflow-hidden">
       <div className="mx-auto relative z-10 flex flex-col items-center">
         <h2 className="reveal font-caprasimo text-3xl md:text-5xl lg:text-5xl text-stone-900 uppercase leading-[1.1] tracking-tight mb-10 md:mb-16 text-center">
           Featured Flavors
