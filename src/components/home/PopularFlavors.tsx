@@ -5,11 +5,11 @@ import { useRef, useEffect, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const flavors = [
-  { name: "Mango", id: "mango", image: "/mango3.png" },
-  { name: "Strawberry", id: "strawberry", image: "/strawberry3.png" },
-  { name: "Peach", id: "peach", image: "/peach3.png" },
-  { name: "Raspberry", id: "raspberry", image: "/rasp2.png" },
-  { name: "Grapes", id: "grapes", image: "/grape4.png" },
+  { name: "Mango", id: "mango", image: "/mango44.png" },
+  { name: "Strawberry", id: "strawberry", image: "/straw1.jpeg" },
+  { name: "Peach", id: "peach", image: "/peach55.png" },
+  { name: "Raspberry", id: "raspberry", image: "/rasp77.png" },
+  { name: "Grapes", id: "grapes", image: "/grape11.png" },
 ];
 
 export default function PopularFlavors() {

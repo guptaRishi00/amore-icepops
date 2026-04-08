@@ -20,7 +20,7 @@ export default function ServicesSection() {
           <div className="reveal reveal-delay-1 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="w-full aspect-3/4 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
-                src="/mango.png"
+                src="/mango44.png"
                 alt="Tropical Mango"
                 fill
                 className="object-cover"
@@ -60,7 +60,7 @@ export default function ServicesSection() {
 
             <div className="w-full aspect-4/3 md:aspect-3/4 lg:aspect-4/5 mt-6 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2 order-1 md:order-0">
               <Image
-                src="/peach.png"
+                src="/peach55.png"
                 alt="Perfect Peach"
                 fill
                 className="object-cover"
@@ -72,7 +72,7 @@ export default function ServicesSection() {
           <div className="reveal reveal-delay-3 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="w-full aspect-4/3 md:aspect-3/4 lg:aspect-4/5 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
-                src="/grape2.png"
+                src="/grape11.png"
                 alt="Concord Grape"
                 fill
                 className="object-cover"

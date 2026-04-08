@@ -47,7 +47,7 @@ export default function BestSellerSection() {
         <div className="reveal w-full md:w-1/2 flex justify-center lg:justify-end relative min-h-[300px] md:min-h-[350px] lg:min-h-[400px] mt-8 md:mt-0">
           <div className="w-full max-w-[200px] md:max-w-[280px] lg:max-w-[340px] aspect-3/4 bg-white border-[3px] border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] flex items-center justify-center relative duration-500 z-10 overflow-hidden">
             <Image
-              src="/strawberry.png"
+              src="/straw1.jpeg"
               alt="Blueberry Bliss Gelato"
               width={340}
               height={450}
