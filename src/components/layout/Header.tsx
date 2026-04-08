@@ -12,9 +12,12 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useCartStore } from "@/store/useCartStore";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const cartItems = useCartStore((state) => state.items);
+  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div className="relative w-full z-50 flex flex-col bg-white">
@@ -54,9 +57,7 @@ export default function Header() {
 
         {/* 2. CENTER: Navigation Links */}
         <nav className="hidden md:flex justify-center items-center gap-7 lg:gap-9 font-caprasimo text-stone-900 text-[15px] tracking-wide pt-1">
-          <Link href="/shop" className="hover:text-[#406BB5] transition-colors">
-            Shop
-          </Link>
+
 
           <Link
             href="/flavors"
@@ -89,13 +90,18 @@ export default function Header() {
 
         {/* 3. RIGHT: Cart and Order Button */}
         <div className="flex items-center justify-end gap-5 lg:gap-7 shrink-0 pt-1">
-          <button
+          <Link
+            href="/cart"
             aria-label="Cart"
             className="relative text-stone-900 hover:text-[#406BB5] cursor-pointer transition-colors"
           >
-            <ShoppingBag size={20} strokeWidth={2.5} />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#406BB5] rounded-full border-2 border-white"></span>
-          </button>
+            <ShoppingBag size={24} strokeWidth={2.5} />
+            {cartItemCount > 0 && (
+              <span className="absolute -top-1.5 -right-2 min-w-[20px] h-[20px] px-1 bg-[#2C2A29] text-white rounded-full flex items-center justify-center font-jua text-[11px] shadow-[2px_2px_0px_0px_rgba(64,107,181,1)]">
+                {cartItemCount}
+              </span>
+            )}
+          </Link>
 
           <Link
             href="/order"

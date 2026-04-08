@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ShoppingCart, CheckCircle2 } from "lucide-react";
+import { useCartStore } from "@/store/useCartStore";
+import { motion, AnimatePresence } from "framer-motion";
 
 const allFlavors = [
   {
@@ -48,6 +52,24 @@ const allFlavors = [
 ];
 
 export default function FlavorsGrid() {
+  const addItem = useCartStore((state) => state.addItem);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const handleAddToCart = (flavor: any) => {
+    addItem({
+      id: flavor.id,
+      name: flavor.name,
+      price: 4.50, // Setting a uniform dummy price for all pops
+      quantity: 1,
+      image: flavor.image,
+    });
+    
+    setToastMessage(`Added ${flavor.name} to cart!`);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  };
+
   return (
     <section className="relative w-full bg-[#FAF9F6] py-10 md:py-28 px-4 md:px-8 lg:px-12 z-10">
       <div className="max-w-7xl mx-auto">
@@ -87,17 +109,32 @@ export default function FlavorsGrid() {
                   {flavor.desc}
                 </p>
 
-                <Link
-                  href={`/shop/${flavor.id}`}
-                  className="mt-auto inline-flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 bg-white text-stone-950 font-jua border-[3px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-sm md:text-base uppercase tracking-widest font-bold"
+                <button
+                  onClick={() => handleAddToCart(flavor)}
+                  className="mt-auto inline-flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 bg-white text-stone-950 font-jua border-[3px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-sm md:text-base uppercase tracking-widest font-bold cursor-pointer"
                 >
-                  Order Now <ChevronRight size={18} strokeWidth={3} />
-                </Link>
+                  Add to Cart <ShoppingCart size={18} strokeWidth={3} />
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Custom Toast Notification */}
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, x: "-50%" }}
+            animate={{ opacity: 1, y: 0, x: "-50%" }}
+            exit={{ opacity: 0, y: 20, x: "-50%" }}
+            className="fixed bottom-10 left-1/2 z-50 flex items-center gap-3 px-6 py-4 bg-white border-[3px] border-stone-900 shadow-[6px_6px_0px_0px_rgba(64,107,181,1)] rounded-full"
+          >
+            <CheckCircle2 size={24} className="text-[#406BB5]" />
+            <span className="font-jua text-stone-900 text-lg">{toastMessage}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
