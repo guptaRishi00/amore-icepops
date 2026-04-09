@@ -1,12 +1,32 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, CheckCircle2, ShoppingCart } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useCartStore } from "@/store/useCartStore";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ServicesSection() {
   const ref = useScrollReveal();
+  const addItem = useCartStore((state) => state.addItem);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const handleAddToCart = (flavor: any) => {
+    addItem({
+      id: flavor.id,
+      name: flavor.name,
+      price: 4.50, // Setting a uniform dummy price for all pops
+      quantity: 1,
+      image: flavor.image,
+    });
+
+    setToastMessage(`Added ${flavor.name} to cart!`);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  };
 
   return (
     <section ref={ref} className="relative w-full bg-white py-10 md:pb-24 px-6 lg:px-20 overflow-hidden">
@@ -34,12 +54,12 @@ export default function ServicesSection() {
               We source the finest tropical mangoes to bring you a sweet, refreshing flavor that tastes just like a summer vacation. 100% real fruit in every bite!
             </p>
 
-            <Link
-              href="/flavors"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto"
+            <button
+              onClick={() => handleAddToCart({ id: "concord-grape", name: "Concord Grape", image: "/grape11.png" })}
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto cursor-pointer font-medium"
             >
-              Order Now <ChevronRight size={16} strokeWidth={3} />
-            </Link>
+              Order now
+            </button>
           </div>
 
           {/* === COLUMN 2: PEACH === */}
@@ -51,12 +71,12 @@ export default function ServicesSection() {
               Our peach pops are made with ripe, juicy peaches blended to perfection, capturing the delicate and natural sweetness of the fruit. Like a warm summer breeze!
             </p>
 
-            <Link
-              href="/flavors"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider order-4 md:order-0"
+            <button
+              onClick={() => handleAddToCart({ id: "concord-grape", name: "Concord Grape", image: "/grape11.png" })}
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto cursor-pointer font-medium"
             >
-              Order Now <ChevronRight size={16} strokeWidth={3} />
-            </Link>
+              Order now
+            </button>
 
             <div className="w-full aspect-4/3 md:aspect-3/4 lg:aspect-4/5 mt-6 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2 order-1 md:order-0">
               <Image
@@ -86,15 +106,30 @@ export default function ServicesSection() {
               Experience the bold and tangy burst of real concord grapes, hand-picked and freshly pressed for a nostalgic treat that takes you back to childhood.
             </p>
 
-            <Link
-              href="/flavors"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto"
+            <button
+              onClick={() => handleAddToCart({ id: "concord-grape", name: "Concord Grape", image: "/grape11.png" })}
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto cursor-pointer font-medium"
             >
-              Order Now <ChevronRight size={16} strokeWidth={3} />
-            </Link>
+              Order now
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Custom Toast Notification */}
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, x: "-50%" }}
+            animate={{ opacity: 1, y: 0, x: "-50%" }}
+            exit={{ opacity: 0, y: 20, x: "-50%" }}
+            className="fixed bottom-10 left-1/2 z-50 flex items-center gap-3 px-6 py-4 bg-white border-[3px] border-stone-900 shadow-[6px_6px_0px_0px_rgba(64,107,181,1)] rounded-full"
+          >
+            <CheckCircle2 size={24} className="text-[#406BB5]" />
+            <span className="font-jua text-stone-900 text-lg">{toastMessage}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

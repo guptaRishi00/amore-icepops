@@ -104,7 +104,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/order"
+            href="/flavors"
             className="hidden sm:flex items-center gap-1 px-5 py-2 bg-white text-stone-900 font-jua text-[13px] uppercase tracking-widest border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-0.75 active:translate-y-0.75"
           >
             Order Now <ChevronRight size={16} strokeWidth={3} />
@@ -141,7 +141,7 @@ export default function Header() {
               Contact
             </Link>
             <Link
-              href="/order"
+              href="/flavors"
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-2 flex items-center justify-center gap-1 px-5 py-3 bg-[#406BB5] text-white font-jua text-sm uppercase tracking-widest rounded-full shadow-md"
             >

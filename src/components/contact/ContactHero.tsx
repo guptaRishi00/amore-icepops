@@ -7,7 +7,7 @@ export default function ContactHero() {
 
   return (
     <section ref={ref} className="w-full px-4 md:px-8 pb-12">
-      <div className="w-full max-w-8xl mx-auto bg-[#406BB5] border-[4px] border-stone-900 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(28,25,23,1)] py-20 px-8 text-center flex flex-col items-center">
+      <div className="w-full max-w-8xl mx-auto bg-[#406BB5] border-[4px] border-stone-900 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(28,25,23,1)] py-32 md:py-32 px-8 text-center flex flex-col items-center">
 
         <div className="reveal inline-block px-6 py-2 bg-white text-stone-900 border-[3px] border-stone-900 rounded-full font-jua text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] mb-8">
           Contact Us

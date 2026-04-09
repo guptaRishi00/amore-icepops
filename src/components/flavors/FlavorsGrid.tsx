@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const allFlavors = [
   {
     id: "strawberry-bliss",
-    name: "Strawberry Bliss",
+    name: "Strawberry ",
     accent: "text-[#ff4d8c]",
     image: "/straw1.jpeg",
     desc: "Sweet, juicy, and 100% natural real strawberries.",
@@ -63,7 +63,7 @@ export default function FlavorsGrid() {
       quantity: 1,
       image: flavor.image,
     });
-    
+
     setToastMessage(`Added ${flavor.name} to cart!`);
     setTimeout(() => {
       setToastMessage(null);
@@ -101,7 +101,7 @@ export default function FlavorsGrid() {
 
               {/* Text & Action */}
               <div className="w-full flex flex-col items-center p-6 md:p-8 text-center bg-white grow">
-                <h2 className="font-caprasimo text-xl md:text-3xl text-stone-900 uppercase tracking-wide mb-3">
+                <h2 className="font-caprasimo text-xl md:text-3xl text-stone-900 uppercase tracking-wide mb-3 min-h-[56px] md:min-h-[72px] flex items-center justify-center">
                   {flavor.name}
                 </h2>
 

@@ -1,12 +1,30 @@
 "use client";
 
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { ChevronRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useCartStore } from "@/store/useCartStore";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function BestSellerSection() {
   const ref = useScrollReveal();
+  const addItem = useCartStore((state) => state.addItem);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const handleAddToCart = () => {
+    addItem({
+      id: "strawberry-bliss",
+      name: "Strawberry Bliss",
+      price: 4.50,
+      quantity: 1,
+      image: "/straw1.jpeg",
+    });
+    setToastMessage("Added Strawberry Bliss to cart!");
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
+  };
 
   return (
     <section ref={ref} className="relative w-full bg-[#406BB5] py-10 md:py-24 px-4 md:px-8 overflow-hidden">
@@ -34,12 +52,12 @@ export default function BestSellerSection() {
           </p>
 
           <div className="pt-2 lg:pt-4">
-            <Link
-              href="/shop/blueberry-bliss"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm md:text-base uppercase tracking-widest"
+            <button
+              onClick={handleAddToCart}
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm md:text-base uppercase tracking-widest cursor-pointer"
             >
               Try It Now <ChevronRight size={18} strokeWidth={3} />
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -63,6 +81,20 @@ export default function BestSellerSection() {
           </div>
         </div>
       </div>
+      {/* Custom Toast Notification */}
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, x: "-50%" }}
+            animate={{ opacity: 1, y: 0, x: "-50%" }}
+            exit={{ opacity: 0, y: 20, x: "-50%" }}
+            className="fixed bottom-10 left-1/2 z-50 flex items-center gap-3 px-6 py-4 bg-white border-[3px] border-stone-900 shadow-[6px_6px_0px_0px_rgba(64,107,181,1)] rounded-full"
+          >
+            <CheckCircle2 size={24} className="text-[#406BB5]" />
+            <span className="font-jua text-stone-900 text-lg">{toastMessage}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

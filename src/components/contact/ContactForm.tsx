@@ -17,7 +17,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         
         {/* Left Column: Form */}
-        <div className="reveal reveal-left flex flex-col gap-8 bg-white border-[4px] border-stone-900 rounded-[2rem] p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(64,107,181,1)]">
+        <div className="reveal reveal-left order-2 lg:order-1 flex flex-col gap-8 bg-white border-[4px] border-stone-900 rounded-[2rem] p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(64,107,181,1)]">
           <h2 className="font-caprasimo text-3xl md:text-4xl text-stone-900 uppercase">
             Send a Message
           </h2>
@@ -72,7 +72,7 @@ export default function ContactForm() {
         </div>
 
         {/* Right Column: Info */}
-        <div className="reveal reveal-right flex flex-col gap-10 lg:pl-8 justify-center">
+        <div className="reveal reveal-right order-1 lg:order-2 flex flex-col gap-10 lg:pl-8 justify-center">
           
           <div className="flex flex-col gap-4">
             <h2 className="font-caprasimo text-3xl md:text-4xl text-stone-900 uppercase">

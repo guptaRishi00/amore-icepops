@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import AboutHero from "@/components/about/AboutHero";
 import AboutMission from "@/components/about/AboutMission";
-import AboutTeam from "@/components/about/AboutTeam";
+import AboutVideoSection from "@/components/about/AboutVideoSection";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
@@ -14,9 +14,7 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <AboutHero />
       <AboutMission />
-      <div className="flex flex-col items-center w-full">
-        <AboutTeam />
-      </div>
+      <AboutVideoSection />
       <Footer />
     </div>
   );

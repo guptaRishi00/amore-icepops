@@ -43,11 +43,11 @@ export default function AboutFruitPopsSection() {
           {/* Badge */}
           <div className="reveal inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFB000] text-stone-900 border-[3px] border-stone-900 rounded-full font-jua text-sm md:text-base uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
             {/* <Sparkles size={16} fill="currentColor" strokeWidth={2.5} /> */}
-            About Us
+            Our Story
           </div>
 
           {/* Heading */}
-          <h2 className="reveal reveal-delay-1 font-caprasimo text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] text-stone-900 uppercase leading-[1.08] tracking-wider max-w-xl">
+          <h2 className="reveal reveal-delay-1 font-caprasimo text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-900 uppercase leading-[1.08] tracking-wider max-w-xl">
             Handcrafted With Love, Made With Real Fruit
           </h2>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import StoryHero from "@/components/story/StoryHero";
 import StoryValues from "@/components/story/StoryValues";
+import StoryPillars from "@/components/story/StoryPillars";
 import LocationsSection from "@/components/flavors/LocationsSection";
 import Footer from "@/components/layout/Footer";
 
@@ -16,6 +17,7 @@ export default function StoryPage() {
       <div className="flex flex-col items-center w-full">
         <StoryValues />
       </div>
+      <StoryPillars />
       <LocationsSection />
       <Footer />
     </div>
