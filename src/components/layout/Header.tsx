@@ -57,7 +57,12 @@ export default function Header() {
 
         {/* 2. CENTER: Navigation Links */}
         <nav className="hidden md:flex justify-center items-center gap-7 lg:gap-9 font-caprasimo text-stone-900 text-[15px] tracking-wide pt-1">
-
+          <Link
+            href="/"
+            className="flex items-center gap-1 hover:text-[#406BB5] transition-colors group"
+          >
+            Home
+          </Link>
 
           <Link
             href="/flavors"
