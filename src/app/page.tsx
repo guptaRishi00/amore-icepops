@@ -15,7 +15,6 @@ export default function Home() {
     <div className="">
       <HeroSection />
       <AboutFruitPopsSection />
-
       {/* <WeOfferMemoriesSection /> */}
       <FeaturesBanner />
       <PopularFlavors />

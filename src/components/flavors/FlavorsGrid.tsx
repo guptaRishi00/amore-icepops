@@ -80,7 +80,7 @@ export default function FlavorsGrid() {
               className="flex flex-col items-center bg-white border-[3px] border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] overflow-hidden"
             >
               {/* Image Container */}
-              <div className="w-full h-[220px] md:h-[320px] bg-stone-100 border-b-[3px] border-stone-900 relative overflow-hidden flex items-center justify-center">
+              <div className="w-full h-[280px] md:h-[420px] bg-stone-100 border-b-[3px] border-stone-900 relative overflow-hidden flex items-center justify-center">
                 {/* Background dot pattern inside card */}
                 <div
                   className="absolute inset-0 opacity-30 mix-blend-multiply"

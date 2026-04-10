@@ -57,7 +57,7 @@ export default function PopularFlavors() {
   return (
     <section ref={sectionRef} className="w-full bg-white py-10 md:py-24 px-6 lg:px-20">
       <div className="mx-auto">
-        <div className="reveal flex flex-col items-center justify-center mb-8 md:mb-12 gap-4 text-center">
+        <div className="reveal flex flex-col items-center justify-center mb-8 md:mb-16 gap-4 text-center">
           <div className="flex items-center justify-center gap-3 md:gap-5">
             <Image
               src="/penguine2.svg"

@@ -100,7 +100,7 @@ export default function ContactForm() {
               </div>
               <div className="flex flex-col gap-1 pt-1">
                 <h4 className="font-caprasimo text-xl text-stone-900 uppercase">Call Us</h4>
-                <p className="font-jua text-stone-600">(555) 123-4567<br/>Mon-Fri, 9am - 5pm</p>
+                <p className="font-jua text-stone-600"><a href="tel:+15551234567" className="hover:text-[#406BB5] transition-colors underline">(555) 123-4567</a><br/>Mon-Fri, 9am - 5pm</p>
               </div>
             </div>
 
@@ -110,7 +110,7 @@ export default function ContactForm() {
               </div>
               <div className="flex flex-col gap-1 pt-1">
                 <h4 className="font-caprasimo text-xl text-stone-900 uppercase">Email Us</h4>
-                <p className="font-jua text-stone-600">hello@amorefruitpops.com</p>
+                <p className="font-jua text-stone-600"><a href="mailto:hello@amorefruitpops.com" className="hover:text-[#406BB5] transition-colors underline">hello@amorefruitpops.com</a></p>
               </div>
             </div>
           </div>

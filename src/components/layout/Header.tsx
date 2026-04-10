@@ -73,12 +73,12 @@ export default function Header() {
             Story
           </Link>
 
-          <Link
+          {/* <Link
             href="/about"
             className="hover:text-[#406BB5] transition-colors"
           >
             About Us
-          </Link>
+          </Link> */}
 
           <Link
             href="/contact"
