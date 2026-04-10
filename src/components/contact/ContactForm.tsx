@@ -95,9 +95,9 @@ export default function ContactForm() {
             </div>
 
             <div className="flex items-start gap-5">
-              <div className="w-14 h-14 shrink-0 bg-sky-300 border-[3px] border-stone-900 rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
+              <a href="tel:+15551234567" className="w-14 h-14 shrink-0 bg-sky-300 border-[3px] border-stone-900 rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:scale-105 transition-transform">
                 <Phone size={24} className="text-stone-900" />
-              </div>
+              </a>
               <div className="flex flex-col gap-1 pt-1">
                 <h4 className="font-caprasimo text-xl text-stone-900 uppercase">Call Us</h4>
                 <p className="font-jua text-stone-600"><a href="tel:+15551234567" className="hover:text-[#406BB5] transition-colors underline">(555) 123-4567</a><br/>Mon-Fri, 9am - 5pm</p>
@@ -105,12 +105,12 @@ export default function ContactForm() {
             </div>
 
             <div className="flex items-start gap-5">
-              <div className="w-14 h-14 shrink-0 bg-rose-300 border-[3px] border-stone-900 rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]">
+              <a href="mailto:hello@amorefruitpops.com" target="_blank" rel="noopener noreferrer" className="w-14 h-14 shrink-0 bg-rose-300 border-[3px] border-stone-900 rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:scale-105 transition-transform">
                 <Mail size={24} className="text-stone-900" />
-              </div>
+              </a>
               <div className="flex flex-col gap-1 pt-1">
                 <h4 className="font-caprasimo text-xl text-stone-900 uppercase">Email Us</h4>
-                <p className="font-jua text-stone-600"><a href="mailto:hello@amorefruitpops.com" className="hover:text-[#406BB5] transition-colors underline">hello@amorefruitpops.com</a></p>
+                <p className="font-jua text-stone-600"><a href="mailto:hello@amorefruitpops.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#406BB5] transition-colors underline">hello@amorefruitpops.com</a></p>
               </div>
             </div>
           </div>

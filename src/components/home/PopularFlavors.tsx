@@ -92,13 +92,13 @@ export default function PopularFlavors() {
               key={`${flavor.id}-${index}`}
               className={`reveal reveal-delay-${index + 1} flex flex-col items-center gap-3 shrink-0 snap-center min-w-[80vw] sm:min-w-[300px] md:min-w-0`}
             >
-              <div className="w-full aspect-4/5 bg-stone-50 border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden transition-transform hover:-translate-y-2 duration-300 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[6px_6px_0px_0px_rgba(28,25,23,1)] group">
+              <div className="w-full aspect-4/5 bg-stone-50 border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden transition-transform duration-300 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]  group">
                 <Image
                   src={flavor.image}
                   alt={`${flavor.name} ice cream`}
                   fill
                   sizes="(max-width: 768px) 80vw, 20vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 "
                 />
               </div>
               <h3 className="font-caprasimo text-stone-900 text-lg md:text-xl uppercase tracking-wider text-center mt-2">

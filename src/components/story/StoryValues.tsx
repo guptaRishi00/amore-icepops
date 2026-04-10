@@ -38,12 +38,9 @@ export default function StoryValues() {
     <section ref={ref} className="w-full px-4 md:px-8 py-12 md:py-20 max-w-8xl mx-auto">
       {/* Section Header */}
       <div className="reveal text-center mb-12 md:mb-16">
-        <h2 className="font-caprasimo text-3xl md:text-5xl uppercase tracking-wider text-stone-900 mb-4 drop-shadow-[3px_3px_0px_rgba(64,107,181,0.3)]">
-          Our Core Values
+        <h2 className="font-caprasimo text-3xl md:text-5xl uppercase tracking-wider text-stone-900 drop-shadow-[3px_3px_0px_rgba(64,107,181,0.3)] max-w-5xl mx-auto leading-tight">
+          Premium Fruit Pops, Crafted to Delight
         </h2>
-        <p className="font-jua text-stone-500 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-          The principles that guide everything we create.
-        </p>
       </div>
 
       <div className="reveal flex flex-wrap items-start justify-center gap-8 md:gap-12 lg:gap-16">
