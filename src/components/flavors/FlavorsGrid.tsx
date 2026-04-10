@@ -49,6 +49,13 @@ const allFlavors = [
     image: "/apple2.png",
     desc: "Refreshingly crisp green apple with a hint of citrus.",
   },
+  {
+    id: "banana-bliss",
+    name: "Banana Bliss",
+    accent: "text-[#f5c842]",
+    image: "/banana.png",
+    desc: "Creamy, naturally sweet banana goodness in every bite.",
+  },
 ];
 
 export default function FlavorsGrid() {

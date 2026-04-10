@@ -44,7 +44,7 @@ export default function HeroSection() {
                 href="/shop"
                 className="shrink-0 flex items-center gap-2 px-8 py-4 bg-white text-stone-900 font-jua text-base md:text-lg uppercase tracking-widest border-[3px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 font-bold"
               >
-                Shop Flavors <ChevronRight size={20} strokeWidth={3} />
+                Pick Your Favourite<ChevronRight size={20} strokeWidth={3} />
               </Link>
             </div>
           </div>

@@ -29,7 +29,7 @@ export default function Header() {
           </div>
 
           <div className="text-center w-full md:w-auto text-[#e6dcd3]">
-            Free shipping on orders over $50!
+            FREE SHIPPING ABOVE ₹500
           </div>
 
           <div className="hidden md:flex items-center gap-2">
@@ -75,7 +75,7 @@ export default function Header() {
             href="/story"
             className="hover:text-[#406BB5] transition-colors"
           >
-            Story
+            Our Story
           </Link>
 
           {/* <Link

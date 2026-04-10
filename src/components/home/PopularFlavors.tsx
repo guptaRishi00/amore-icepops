@@ -10,6 +10,7 @@ const flavors = [
   { name: "Peach", id: "peach", image: "/peach55.png" },
   { name: "Raspberry", id: "raspberry", image: "/rasp77.png" },
   { name: "Grapes", id: "grapes", image: "/grape11.png" },
+  { name: "Banana", id: "banana", image: "/banana.png" },
 ];
 
 export default function PopularFlavors() {
@@ -85,12 +86,12 @@ export default function PopularFlavors() {
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
-          className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-5 snap-x snap-mandatory gap-5 lg:gap-8 pb-6 md:pb-2 pt-2 px-2 md:px-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 lg:gap-8 pb-6 md:pb-2 pt-2 px-2 md:px-5"
         >
           {flavors.map((flavor, index) => (
             <div
               key={`${flavor.id}-${index}`}
-              className={`reveal reveal-delay-${index + 1} flex flex-col items-center gap-3 shrink-0 snap-center min-w-[80vw] sm:min-w-[300px] md:min-w-0`}
+              className={`reveal reveal-delay-${index + 1} flex flex-col items-center gap-3`}
             >
               <div className="w-full aspect-4/5 bg-stone-50 border-[3px] border-stone-900 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden transition-transform duration-300 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]  group">
                 <Image
