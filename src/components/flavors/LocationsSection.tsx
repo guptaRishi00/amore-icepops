@@ -40,9 +40,9 @@ export default function LocationsSection() {
                     Our Store
                   </h3>
                   <p className="font-jua text-stone-700 text-base md:text-lg leading-relaxed">
-                    123 Popsicle Avenue, Fruit Park,<br />
-                    Road No. 45, Mumbai,<br />
-                    Maharashtra 400001, India
+                    Dn.no - 13-165, ward no : 13,<br />
+                    bolaram industrial area,<br />
+                    Hyderabad, Telangana-500118
                   </p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function LocationsSection() {
               </div>
 
               {/* Phone */}
-              <a href="tel:+919876543210" className="block bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+              <a href="tel:+918985867798" className="block bg-[#FAF9F6] border-[3px] border-stone-900 rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 shrink-0 bg-[#406BB5] border-2 border-stone-900 rounded-full flex items-center justify-center">
                     <Phone size={18} strokeWidth={3} className="text-white" />
@@ -79,7 +79,7 @@ export default function LocationsSection() {
                       Call Us <ArrowUpRight size={14} strokeWidth={3} className="text-stone-500" />
                     </h3>
                     <p className="font-jua text-stone-700 text-sm md:text-base leading-relaxed">
-                      +91 98765 43210
+                      +91 8985867798
                     </p>
                   </div>
                 </div>

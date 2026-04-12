@@ -86,7 +86,7 @@ export default function ContactForm() {
           <div className="flex flex-col gap-5">
             {/* Visit Us Button */}
             <a
-              href="https://maps.google.com/?q=123+Sunnyside+Avenue+Citrus+City+FL+33012"
+              href="https://maps.google.com/?q=Dn.no+-+13-165,+ward+no+:+13,+bolaram+industrial+area,+Hyderabad,+Telangana-500118"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 w-full bg-[#FFB000] border-[3px] border-stone-900 rounded-xl px-6 py-5 shadow-[5px_5px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-1 hover:translate-y-1 transition-all active:shadow-none active:translate-x-1.5 active:translate-y-1.5"
@@ -94,19 +94,19 @@ export default function ContactForm() {
               <MapPin size={26} className="text-stone-900 shrink-0" />
               <div className="flex flex-col">
                 <span className="font-caprasimo text-lg text-stone-900 uppercase">Visit Us</span>
-                <span className="font-jua text-stone-800 text-sm">123 Sunnyside Avenue, Citrus City, FL</span>
+                <span className="font-jua text-stone-800 text-sm">Dn.no - 13-165, ward no : 13, Bolaram Industrial Area, Hyderabad, Telangana-500118</span>
               </div>
             </a>
 
             {/* Call Us Button */}
             <a
-              href="tel:+15551234567"
+              href="tel:+918985867798"
               className="flex items-center gap-4 w-full bg-sky-300 border-[3px] border-stone-900 rounded-xl px-6 py-5 shadow-[5px_5px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-1 hover:translate-y-1 transition-all active:shadow-none active:translate-x-1.5 active:translate-y-1.5"
             >
               <Phone size={26} className="text-stone-900 shrink-0" />
               <div className="flex flex-col">
                 <span className="font-caprasimo text-lg text-stone-900 uppercase">Call Us</span>
-                <span className="font-jua text-stone-800 text-sm">(555) 123-4567 · Mon–Fri, 9am – 5pm</span>
+                <span className="font-jua text-stone-800 text-sm">+91 8985867798 · Mon–Fri, 9am – 5pm</span>
               </div>
             </a>
 
