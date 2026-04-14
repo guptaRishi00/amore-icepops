@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     
     // In a real application, you would replace this URL with your actual Google Apps Script Web App URL
     // e.g., const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL;
-    const GOOGLE_SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycby_placeholder_url_replace_me/exec";
+    const GOOGLE_SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxtrB8ur6WDghJc0Mqj-jLUkYwCXU5-cUnyJYKMioXQgreROni0sc04Z7aBJKiDVhzXIg/exec";
 
     // Format the payload to be somewhat flat, depending on how your Apps Script expects it
     const orderItems = body.items.map((item: any) => `${item.name} (${item.quantity})`).join(", ");
@@ -21,10 +21,8 @@ export async function POST(request: Request) {
       total: body.total,
     };
 
-    console.log("Simulating Submission to Google Sheets Webhook:", payload);
+    console.log("Submitting to Google Sheets Webhook:", payload);
 
-    /* 
-    // Uncomment this block when you have a real tracking URL
     const response = await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -34,7 +32,6 @@ export async function POST(request: Request) {
     if (!response.ok) {
       throw new Error(`Google Sheets API responded with status: ${response.status}`);
     }
-    */
 
     // Simulating network delay
     await new Promise(resolve => setTimeout(resolve, 1000));
