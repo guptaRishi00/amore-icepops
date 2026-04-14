@@ -9,7 +9,18 @@ export default function HeroSection() {
   return (
     <section className="w-full px-4 md:px-8">
       <div className="relative w-full min-h-[86vh] flex items-center overflow-hidden py-16 md:py-24 rounded-xl">
-        <div className="absolute inset-0 -z-20">
+        {/* Mobile background */}
+        <div className="absolute inset-0 -z-20 block md:hidden">
+          <Image
+            src="/mobile.png"
+            alt="Delicious colorful ice pops"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        </div>
+        {/* Desktop background */}
+        <div className="absolute inset-0 -z-20 hidden md:block">
           <Image
             src="/hero7.png"
             alt="Delicious colorful ice pops"
