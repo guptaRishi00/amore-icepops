@@ -102,7 +102,7 @@ export default function FlavorsGrid() {
                   src={flavor.image}
                   alt={flavor.name}
                   fill
-                  className="object-cover drop-shadow-xl"
+                  className="object-cover drop-shadow-xl rounded-t-3xl md:rounded-t-[2.5rem]"
                 />
               </div>
 
