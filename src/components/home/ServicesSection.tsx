@@ -73,12 +73,12 @@ export default function ServicesSection() {
 
             <button
               onClick={() => handleAddToCart({ id: "concord-grape", name: "Concord Grape", image: "/grape11.png" })}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto cursor-pointer font-medium"
+              className="order-4 md:order-0 inline-flex items-center gap-2 px-6 py-2.5 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 text-sm uppercase tracking-wider mt-auto cursor-pointer font-medium"
             >
               Order now
             </button>
 
-            <div className="w-full aspect-4/3 md:aspect-3/4 lg:aspect-4/5 mt-6 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2 order-1 md:order-0">
+            <div className="w-full aspect-3/4 lg:aspect-4/5 mt-6 md:mt-6 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2 order-1 md:order-0">
               <Image
                 src="/peach55.png"
                 alt="Perfect Peach"
@@ -90,7 +90,7 @@ export default function ServicesSection() {
 
           {/* === COLUMN 3: GRAPE === */}
           <div className="reveal reveal-delay-3 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-full aspect-4/3 md:aspect-3/4 lg:aspect-4/5 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
+            <div className="w-full aspect-3/4 lg:aspect-4/5 bg-stone-100 border-2 border-stone-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative transition-transform duration-300 hover:-translate-y-2">
               <Image
                 src="/grape11.png"
                 alt="Concord Grape"
