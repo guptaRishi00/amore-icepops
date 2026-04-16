@@ -20,10 +20,15 @@ export default function CartPage() {
   });
 
   const cartTotal = items.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalQuantity = items.reduce((total, item) => total + item.quantity, 0);
 
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     if (items.length === 0) return;
+    if (totalQuantity < 5) {
+      alert("Minimum order is 5 pops. Please add more items to your cart.");
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -108,7 +113,7 @@ export default function CartPage() {
                   
                   <div className="flex-grow flex flex-col items-center sm:items-start text-center sm:text-left gap-2 w-full">
                     <h3 className="font-caprasimo text-2xl text-stone-900 uppercase">{item.name}</h3>
-                    <p className="font-jua text-[#406BB5] text-xl">${item.price.toFixed(2)}</p>
+                    <p className="font-jua text-[#406BB5] text-xl">₹{item.price} each</p>
                     
                     <div className="flex items-center gap-4 mt-2">
                       <div className="flex items-center bg-stone-100 border-[3px] border-stone-900 rounded-full overflow-hidden">
@@ -131,7 +136,7 @@ export default function CartPage() {
                   </div>
                   
                   <div className="hidden sm:block text-right self-stretch pt-2 pr-2">
-                    <p className="font-caprasimo text-2xl text-stone-900">${(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="font-caprasimo text-2xl text-stone-900">₹{item.price * item.quantity}</p>
                   </div>
                 </div>
               ))}
@@ -144,12 +149,12 @@ export default function CartPage() {
                 
                 <div className="flex justify-between items-center mb-6 font-jua text-stone-600 text-lg">
                   <span>Subtotal</span>
-                  <span className="text-stone-900 font-bold">${cartTotal.toFixed(2)}</span>
+                  <span className="text-stone-900 font-bold">₹{cartTotal}</span>
                 </div>
                 
                 <div className="flex justify-between items-center mb-8 font-caprasimo text-2xl text-[#406BB5] pt-4 border-t-[3px] border-stone-200">
                   <span>Total</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal}</span>
                 </div>
 
                 <form onSubmit={handleCheckout} className="flex flex-col gap-5">

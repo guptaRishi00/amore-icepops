@@ -16,8 +16,8 @@ export default function BestSellerSection() {
     addItem({
       id: "strawberry-bliss",
       name: "Strawberry Bliss",
-      price: 4.50,
-      quantity: 1,
+      price: 35, // ₹35 per pop
+      quantity: 5,
       image: "/straw1.jpeg",
     });
     setToastMessage("Added Strawberry Bliss to cart!");

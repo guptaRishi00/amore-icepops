@@ -66,8 +66,8 @@ export default function FlavorsGrid() {
     addItem({
       id: flavor.id,
       name: flavor.name,
-      price: 4.50, // Setting a uniform dummy price for all pops
-      quantity: 1,
+      price: 35, // ₹35 per pop
+      quantity: 5,
       image: flavor.image,
     });
 
