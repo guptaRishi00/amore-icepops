@@ -137,7 +137,7 @@ export default function Header() {
               Flavors
             </Link>
             <Link href="/story" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
-              Story
+              Our Story
             </Link>
             {/* <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
               About Us

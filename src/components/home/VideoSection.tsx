@@ -59,7 +59,7 @@ export default function VideoSection() {
           </Link>
 
           <Link
-            href="/flavors"
+            href="tel:+918985867798"
             className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-3 bg-transparent text-white font-jua border-2 border-white rounded-full hover:bg-white hover:text-stone-900 transition-colors text-sm md:text-base uppercase tracking-widest"
           >
             Call Us

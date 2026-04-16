@@ -62,14 +62,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
           {/* Left Side: Brand & Socials */}
           <div className="lg:col-span-2 flex flex-col items-start pr-0 lg:pr-12">
-            <Link href="/" className="flex items-center gap-4 mb-6 group">
+            <Link href="/" className="inline-block mb-6 cursor-pointer group">
               {/* Scaled up logo */}
               <Image
                 src="/logo.png"
                 alt="Amore Logo"
-                width={300}
-                height={300}
-                className="object-contain w-full h-full"
+                width={200}
+                height={80}
+                className="object-contain w-48 md:w-56"
               />
             </Link>
 
