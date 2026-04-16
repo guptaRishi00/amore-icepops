@@ -88,10 +88,10 @@ export default function BestSellerSection() {
             initial={{ opacity: 0, y: 50, x: "-50%" }}
             animate={{ opacity: 1, y: 0, x: "-50%" }}
             exit={{ opacity: 0, y: 20, x: "-50%" }}
-            className="fixed bottom-10 left-1/2 z-50 flex items-center gap-3 px-6 py-4 bg-white border-[3px] border-stone-900 shadow-[6px_6px_0px_0px_rgba(64,107,181,1)] rounded-full"
+            className="fixed bottom-6 left-1/2 z-50 flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-4 bg-white border-2 md:border-[3px] border-stone-900 shadow-[4px_4px_0px_0px_rgba(64,107,181,1)] md:shadow-[6px_6px_0px_0px_rgba(64,107,181,1)] rounded-full max-w-[90vw]"
           >
-            <CheckCircle2 size={24} className="text-[#406BB5]" />
-            <span className="font-jua text-stone-900 text-lg">{toastMessage}</span>
+            <CheckCircle2 size={18} className="text-[#406BB5] shrink-0 md:w-6 md:h-6" />
+            <span className="font-jua text-stone-900 text-sm md:text-lg truncate">{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
