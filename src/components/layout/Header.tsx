@@ -139,9 +139,9 @@ export default function Header() {
             <Link href="/story" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
               Story
             </Link>
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
+            {/* <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
               About Us
-            </Link>
+            </Link> */}
             <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2">
               Contact
             </Link>
