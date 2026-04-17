@@ -27,7 +27,7 @@ export default function EventsSection() {
               src="/party.png"
               alt="Party Ice Pop Event"
               fill
-              className="object-cover drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] max-w-full"
+              className="object-cover rounded-t-xl md:rounded-t-none drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] max-w-full"
             />
           </div>
 
