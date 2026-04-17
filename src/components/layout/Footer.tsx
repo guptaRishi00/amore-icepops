@@ -112,7 +112,15 @@ export default function Footer() {
             <ul className="flex flex-col gap-5 font-jua text-xl text-stone-700">
               <li>
                 <Link
-                  href="#"
+                  href="/"
+                  className="hover:text-[#406BB5] hover:pl-2 transition-all duration-300 block"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/story"
                   className="hover:text-[#406BB5] hover:pl-2 transition-all duration-300 block"
                 >
                   Our Story
@@ -120,26 +128,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/flavors"
                   className="hover:text-[#406BB5] hover:pl-2 transition-all duration-300 block"
                 >
                   All Flavors
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-[#406BB5] hover:pl-2 transition-all duration-300 block"
-                >
-                  Food Trucks
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-[#406BB5] hover:pl-2 transition-all duration-300 block"
-                >
-                  Catering
                 </Link>
               </li>
             </ul>
@@ -153,28 +145,20 @@ export default function Footer() {
             </h3>
             {/* Scaled up list gap and text size */}
             <ul className="flex flex-col gap-5 font-jua text-xl text-stone-700">
+              {/* <li>
+                <Link
+                  href="/about"
+                  className="hover:text-[#FF4D8C] hover:pl-2 transition-all duration-300 block"
+                >
+                  About Us
+                </Link>
+              </li> */}
               <li>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="hover:text-[#FF4D8C] hover:pl-2 transition-all duration-300 block"
                 >
                   Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-[#FF4D8C] hover:pl-2 transition-all duration-300 block"
-                >
-                  Find Shops
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-[#FF4D8C] hover:pl-2 transition-all duration-300 block"
-                >
-                  FAQ
                 </Link>
               </li>
             </ul>
@@ -188,13 +172,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Amore icepops All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 font-jua text-stone-600 text-lg">
-            <Link href="#" className="hover:text-stone-900 transition-colors">
-              Privacy Policy
-            </Link>
-            <span className="w-2 h-2 bg-stone-900 rounded-full hidden sm:block"></span>
-            <Link href="#" className="hover:text-stone-900 transition-colors">
-              Terms of Service
-            </Link>
+            {/* Added for alignment, hiding extra non-existent text */}
           </div>
         </div>
       </div>

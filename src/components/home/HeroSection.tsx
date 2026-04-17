@@ -52,7 +52,7 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 animate-[fadeUp_0.5s_ease-out_0.6s_both]">
               <Link
-                href="/shop"
+                href="/flavors"
                 className="shrink-0 flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-white text-stone-900 font-jua text-sm md:text-lg uppercase tracking-widest border-[3px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 font-bold"
               >
                 Pick Your Favourite<ChevronRight size={20} strokeWidth={3} />
