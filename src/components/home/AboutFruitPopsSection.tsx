@@ -66,12 +66,15 @@ export default function AboutFruitPopsSection() {
           </div>
 
           {/* Stats Row */}
-          <div className="reveal reveal-delay-3 flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-5 pt-4">
+          <div className="reveal reveal-delay-3 flex flex-row flex-wrap items-stretch md:items-center justify-center lg:justify-start gap-4 md:gap-5 pt-4 w-full">
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className={`flex flex-col items-center px-5 md:px-7 py-4 md:py-5 bg-white border-[3px] border-stone-900 rounded-2xl shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] min-w-[110px] ${stat.value === "10K+" ? "w-full max-w-[240px] md:w-auto md:max-w-none" : ""
-                  }`}
+                className={`flex flex-col items-center justify-center px-4 md:px-7 py-4 md:py-5 bg-white border-[3px] border-stone-900 rounded-2xl shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] md:min-w-[110px] ${
+                  stat.value === "10K+"
+                    ? "w-full md:w-auto"
+                    : "w-[calc(50%-0.5rem)] md:w-auto"
+                }`}
               >
                 <span className="font-caprasimo text-2xl md:text-3xl text-stone-900 leading-none">
                   {stat.value}

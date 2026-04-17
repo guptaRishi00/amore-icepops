@@ -130,9 +130,9 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden w-full bg-white border-t border-stone-200 absolute top-full left-0 z-40 flex flex-col px-6 py-4 shadow-xl">
           <nav className="flex flex-col gap-4 font-caprasimo text-stone-900 text-lg tracking-wide">
-            <Link href="/shop" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
+            {/* <Link href="/shop" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
               Shop
-            </Link>
+            </Link> */}
             <Link href="/flavors" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#406BB5] py-2 border-b border-stone-100">
               Flavors
             </Link>

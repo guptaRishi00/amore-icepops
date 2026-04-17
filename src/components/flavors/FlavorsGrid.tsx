@@ -112,16 +112,27 @@ export default function FlavorsGrid() {
                   {flavor.name}
                 </h2>
 
-                <p className="font-jua text-stone-600 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed max-w-xs">
+                <p className="font-jua text-stone-600 text-sm md:text-lg mb-3 leading-relaxed max-w-xs">
                   {flavor.desc}
                 </p>
 
-                <button
-                  onClick={() => handleAddToCart(flavor)}
-                  className="mt-auto inline-flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 bg-white text-stone-950 font-jua border-[3px] border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-sm md:text-base uppercase tracking-widest font-bold cursor-pointer"
-                >
-                  Add to Cart <ShoppingCart size={18} strokeWidth={3} />
-                </button>
+                <div className="mt-auto w-full pt-5 md:pt-6 border-t-[3px] border-stone-900 flex flex-row items-center justify-between gap-2 md:gap-4">
+                  <div className="flex flex-col items-start font-jua flex-shrink-0">
+                    <span className="text-2xl md:text-3xl font-bold text-stone-900 leading-none">
+                      ₹35<span className="text-base text-stone-500 font-normal">/pop</span>
+                    </span>
+                    <span className="text-xs md:text-sm text-[#406BB5] mt-1.5 font-bold uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
+                      Min: 5 pops
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => handleAddToCart(flavor)}
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 md:px-6 md:py-3 bg-white text-stone-950 font-jua border-[3px] border-stone-900 rounded-xl md:rounded-2xl shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-sm md:text-base uppercase tracking-widest font-bold cursor-pointer shrink-0"
+                  >
+                    Add <ShoppingCart size={18} strokeWidth={3} className="hidden lg:block shrink-0" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}

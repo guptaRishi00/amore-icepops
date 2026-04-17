@@ -50,7 +50,7 @@ export default function VideoSection() {
 
         <div className="reveal reveal-delay-3 mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
           <Link
-            href="/about"
+            href="/flavors"
             className="inline-flex items-center gap-2 px-5 py-2.5 md:px-8 md:py-3 bg-white text-stone-950 font-jua border-2 border-stone-900 rounded-full shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[3px] hover:translate-y-[3px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-sm md:text-base uppercase tracking-widest"
           >
             Order Now

@@ -12,7 +12,7 @@ export default function EventsSection() {
       <div className="reveal mx-auto flex flex-col md:flex-row bg-[#406BB5] border-4 border-stone-900 rounded-3xl md:rounded-[2.5rem] shadow-[8px_8px_0px_0px_rgba(28,25,23,1)] overflow-hidden">
 
         {/* Left Side: Illustration / Visuals */}
-        <div className="md:w-5/12 bg-[#FFB000] border-b-4 md:border-b-0 md:border-r-4 border-stone-900 flex flex-col items-center justify-center relative overflow-hidden group min-h-[250px] md:min-h-full">
+        <div className="md:w-5/12 bg-[#FFB000] border-b-4 md:border-b-0 md:border-r-4 border-stone-900 flex flex-col items-center justify-center relative overflow-hidden isolate min-h-[250px] md:min-h-[400px]">
           <div
             className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply"
             style={{
@@ -22,12 +22,12 @@ export default function EventsSection() {
             }}
           />
 
-          <div className="absolute inset-0 z-10">
+          <div className="absolute inset-0 z-10 block w-full h-full">
             <Image
               src="/party.png"
               alt="Party Ice Pop Event"
               fill
-              className="object-cover drop-shadow-[4px_4px_0px_rgba(28,25,23,1)]"
+              className="object-cover drop-shadow-[4px_4px_0px_rgba(28,25,23,1)] max-w-full"
             />
           </div>
 
