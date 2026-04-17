@@ -22,7 +22,7 @@ export default function EventsSection() {
             }}
           />
 
-          <div className="absolute inset-0 z-10 block w-full h-full">
+          <div className="absolute inset-0 z-10 block w-full h-full overflow-hidden">
             <Image
               src="/party.png"
               alt="Party Ice Pop Event"
