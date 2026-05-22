@@ -165,14 +165,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* --- BOTTOM DIVIDER & COPYRIGHT --- */}
-        {/* Scaled up top margin, border width, and text size */}
-        <div className="w-full mt-16 pt-8 border-t-[3px] border-stone-900 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <p className="font-jua text-stone-600 text-lg">
-            © {new Date().getFullYear()} Amore icepops All rights reserved.
+        <div className="w-full mt-16 pt-8 border-t-[3px] border-stone-900 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+          {/* Copyright on the left (or center on mobile) */}
+          <p className="font-jua text-stone-600 text-lg order-2 md:order-1">
+            © {new Date().getFullYear()} Amore icepops. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 font-jua text-stone-600 text-lg">
-            {/* Added for alignment, hiding extra non-existent text */}
+
+          {/* Credit on the right (or center on mobile) */}
+          <div className="font-jua text-stone-600 text-lg order-1 md:order-2">
+            Made with ❤️ by{" "}
+            <a
+              href="https://softexedge.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-800 hover:text-[#FF4D8C] transition-colors"
+            >
+              softexedge
+            </a>
           </div>
         </div>
       </div>
